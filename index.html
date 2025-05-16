@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dirección de Seguridad Pública y Comunitaria</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border: 8px solid #273187;
+    }
+    .titulo {
+      background-color: #c20064;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .subtitulo {
+      text-align: center;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .emergencia {
+      background: #273187;
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    .numero-emergencia {
+      background: #f0e800;
+      color: #273187;
+      font-size: 32px;
+      font-weight: bold;
+      margin-left: 10px;
+      padding: 5px 15px;
+      border-radius: 8px;
+    }
+    .ejes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .eje {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-left: 8px solid #273187;
+    }
+    .eje.rosa {
+      border-left-color: #c20064;
+    }
+    .programas {
+      margin: 20px 0;
+    }
+    .programas table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    .programas th, .programas td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    .detalle-seccion {
+      margin-top: 30px;
+    }
+    .detalle-titulo {
+      background: #c20064;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .detalle-subtitulo {
+      font-weight: bold;
+      margin: 15px 0 5px;
+      display: flex;
+      align-items: center;
+    }
+    .detalle-subtitulo::before {
+      content: "\2713";
+      color: #273187;
+      margin-right: 10px;
+    }
+    .contacto, .horarios {
+      margin: 10px 0;
+    }
+    .qr {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 30px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- LOGO LOCAL (solo se verá en tu PC) -->
+    <img src="file:///C:/Users/cpeña/Desktop/CODIGO/Logo%20DSPC%202.jpg"
+         alt="Logo DSPC"
+         style="max-width: 150px; display: block; margin: 20px auto;">
+
+    <!-- TÍTULO -->
+    <div class="titulo">Dirección de Seguridad Pública y Comunitaria</div>
+    <div class="subtitulo">¡Alcaldía Ciudadana que resguarda la seguridad de nuestras vecinas y vecinos!<br />Quilicura Como la Queremos</div>
+
+    <div class="emergencia">
+      Central de Llamados de Emergencia 24 horas
+      <div class="numero-emergencia">1485</div>
+    </div>
+
+    <div class="subtitulo">Trabajamos por la comunidad en los siguientes ejes:</div>
+
+    <div class="ejes">
+      <div class="eje">Disuasión del delito</div>
+      <div class="eje">Articulación Territorial</div>
+      <div class="eje rosa">Centro de Atención a Víctimas</div>
+      <div class="eje rosa">Delegación Municipal Sector Sur</div>
+    </div>
+
+    <div class="programas">
+      <div class="subtitulo">Nuestros programas en convenio que ofrecen atención integral:</div>
+      <table>
+        <tr>
+          <td>Programa Senda Previene</td>
+          <td>Centro de las Mujeres</td>
+          <td>OPD Quilicura</td>
+        </tr>
+        <tr>
+          <td>OPD 24 horas Quilicura</td>
+          <td>Programa Lazos</td>
+          <td>Somos Barrio</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="detalle-seccion">
+      <div class="detalle-titulo">¿Qué hacemos? - Estamos en el territorio</div>
+
+      <div class="detalle-subtitulo">Disuasión del delito</div>
+      <p>Coordinación de dispositivos móviles de disuasión del delito; atención de emergencias y patrullajes focalizados 24/7.</p>
+      <img src="img/qr_patrullaje.png" alt="QR Patrullaje" class="qr">
+      <p><strong>Importante:</strong> Contamos con 21 vehículos y 9 motocicletas.<br>
+         <strong>Para solicitar patrullajes:</strong> Realizar una OIRS en <strong>tramitefacil@quilicura.cl</strong></p>
+
+      <div class="detalle-subtitulo">Articulación Territorial</div>
+      <p>Fomentamos la participación comunitaria generando iniciativas de prevención y recuperación de barrios. Organizamos Comités de Seguridad Ciudadana, con acompañamiento permanente.</p>
+      <p class="contacto">Encuéntranos en: Ignacio Serrano Nº557<br>
+         Escríbenos: articulacionterritorial.seguridad@quilicura.cl</p>
+
+      <div class="detalle-titulo">Te acompañamos</div>
+
+      <div class="detalle-subtitulo">Centro de Atención a Víctimas</div>
+      <p>Atención psicosocial a personas víctimas de violencia, delitos o vulneración de derechos. Asesoramos a través de redes de apoyo municipal.</p>
+      <p class="contacto">Encuéntranos en: Ignacio Serrano Nº557<br>
+         Solicita tu atención: WhatsApp +569 3283 8516 / 2 3384 2092</p>
+      <p class="horarios">Horarios: Lunes a jueves de 08:30 a 17:30 horas y viernes de 08:30 a 16:30 horas.</p>
+
+      <div class="detalle-subtitulo">Delegación Municipal Sector Sur</div>
+      <p>Acercamos servicios municipales a la comunidad del sur de Quilicura. Dotación permanente de Seguridad Pública.</p>
+      <p class="contacto">Dirección: Camino del Cerro Nº1676<br>
+         Teléfono: 2 2944 4739</p>
+    </div>
+
+    <div class="footer">
+      Municipalidad de Quilicura - Quilicura Como la Queremos
+    </div>
+  </div>
+</body>
+</html>
