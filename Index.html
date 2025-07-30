@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dirección de Seguridad y Comunitaria</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header, .section, footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+    }
+    .titulo {
+      background-color: #c20064;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .subtitulo {
+      text-align: center;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .emergencia {
+      background: #273187;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    .numero-emergencia {
+      background: #f0e800;
+      color: #273187;
+      font-size: 32px;
+      font-weight: bold;
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .ejes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .eje {
+      border-left: 8px solid #273187;
+      border: 1px solid #ccc;
+      padding: 10px;
+      flex: 1 1 200px;
+      max-width: 300px;
+    }
+    .eje.rosa {
+      border-left-color: #c20064;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    img.responsive {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .qr-section {
+      display: none;
+    }
+    .detalle-subtitulo::before {
+      content: "\2713 ";
+      color: #273187;
+      margin-right: 10px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #c20064;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      margin: 20px 0;
+    }
+    .carousel img {
+      width: 100%;
+      animation: slide 12s infinite;
+    }
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      33% {transform: translateX(-100%);}
+      66% {transform: translateX(-200%);}
+      100% {transform: translateX(0);}
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    footer {
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .qr-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#programas">Programas</a>
+    <a href="#Articulacion territorial">Territorial</a>
+    <a href="#Nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <header id="nosotros">
+    <img src="Logo DSPC 2.jpg" alt="Logo DSPC" style="width: 100%; height: 200px; object-fit: contain; display: block;">
+    <div class="carousel">
+      <img src="Camioneta_1.JPG" alt="Imagen 1">
+      <img src="Camioneta_2.jpg" alt="Imagen 2">
+      <img src="Camara_1.jpg" alt="Imagen 3">
+      <img src="Drone.jpg" alt="Imagen 4">
+      <img src="Monoposte.png" alt="Imagen 5">
+    </div>
+      </header>
+</div>
+
+<style>
+.carousel {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 20px;
+padding: 20px;
+background: white;
+border-radius: 50px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+max-width: 800%;
+}
+.carousel-images {
+display: flex;
+width: 800%;
+animation:  deslizar 25s infinite linear;
+}
+.carousel-images img {
+width: 200%;
+height: 200;
+object-fit: cover;
+border-radius: 12px;
+box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
+transition: transform 0.3s ease;
+}
+.galeria-carrusel img:hover {
+   transform: scale(1.03);
+}
+   @media (max-width: 800px) {
+  .galeria-carrusel {
+    grid-template-columns: 1fr 1fr;
+}
+}
+</style>
+    <div class="subtitulo">¡Alcaldía Ciudadana que resguarda la seguridad de nuestras vecinas y vecinos!<br>Quilicura Como la Queremos</div>
+  </header>  <section class="section" id="inicio">
+    <div class="emergencia">
+      Central de Llamados de Emergencia 24 horas<br>
+      <div class="numero-emergencia">1485</div>
+    </div>
+    <div class="subtitulo">Trabajamos por la comunidad en los siguientes ejes:</div>
+    <div class="ejes">
+      <div class="eje">Disuasión del delito</div>
+      <div class="eje">Articulación Territorial</div>
+      <div class="eje rosa">Centro de Atención a Víctimas</div>
+      <div class="eje rosa">Delegación Municipal Sector Sur</div>
+    </div>
+  </section>  <section class="section" id="programas">
+    <section class="section" id="programa-lazos" style="margin-top: 40px;">
+  <h2 style="color: #b90069; text-align: center;">Programa Lazos</h2>
+  <p style="font-size: 16px; text-align: justify;">
+    Somos un programa de carácter confidencial que apoya a las familias para que niños, niñas y adolescentes crezcan en un entorno seguro, alejados de conductas de riesgo. Contamos con tres dispositivos de intervención:
+  </p>
+  <ol style="padding-left: 20px; font-size: 16px; text-align: justify;">
+    <li>
+      <strong>Equipo de Detección Temprana:</strong> Encargado de realizar el despeje del caso y derivarlo al programa correspondiente, según el nivel de riesgo identificado.
+    </li>
+    <li>
+      <strong>Parentalidad Positiva:</strong> Programa dirigido a familias que enfrentan dificultades conductuales o emocionales de su adolescente y que desean fortalecer sus habilidades parentales y de crianza.
+    </li>
+    <li>
+      <strong>Terapia Multisistémica:</strong> Intervención intensiva para familias con adolescentes que presentan conductas violentas o problemáticas. Un terapeuta trabaja directamente con la familia en su hogar, con horarios flexibles y disponibilidad las 24 horas del día, los 7 días de la semana.
+    </li>
+  </ol>
+  <p style="font-size: 16px; margin-top: 10px;">
+    <strong>Encuéntranos en:</strong> Del Sembrador Nº530<br>
+    <strong>Solicita tu atención en:</strong><br>
+    📞 +56 9 8123 3915<br>
+    📞 +56 9 9481 0652
+  </p>
+</section>
+    <div class="subtitulo">Nuestros programas en convenio que ofrecen atención integral:</div>
+    <table>
+      <tr><td>Programa Senda Previene</td><td>Centro de las Mujeres</td></tr>
+      <tr><td>Programa Lazos</td><td>Somos Barrio</td></tr>
+    </table>
+  </section>  <section class="section" id="territorio">
+    <h2 style="color: #b90069;">¿Qué hacemos? - Estamos en el territorio</h2>
+    <h3 style="color: #1e3799;">Disuasión del delito</h3>
+    <p>Coordinación de dispositivos móviles de disuasión del delito, atención de emergencias y patrullajes focalizados 24/7.</p>
+    <div class="ejes">
+      <div class="eje">Cámaras de vigilancia: 830</div>
+      <div class="eje">Drones activos: 03</div>
+      <div class="eje">Monopostes: 15</div>
+      <div class="eje">Motocicletas: 5</div>
+    </div>
+    <h3 style="color: #1e3799;">Nuestra labor como Seguridad Pública</h3>
+    <p>Somos una dirección municipal dedicada a la prevención, vigilancia, respuesta temprana y acompañamiento comunitario para construir una comuna más segura, organizada y solidaria.</p>
+    <img src="mapa_dspc.png" alt="Mapa patrullaje" class="responsive" style="max-width: 700px; margin: auto; display: block;"><h3 class="detalle-subtitulo">Articulación Territorial</h3>
+<p>Fomentamos la participación comunitaria generando iniciativas de prevención y recuperación de barrios. Organizamos Comités de Seguridad Ciudadana, con acompañamiento permanente.</p>
+<img src="articulacion_territorial.png" alt="Articulación Territorial" class="responsive" style="max-width: 700px; margin: auto; display: block;">
+<p><strong>Dirección:</strong> Ignacio Serrano Nº557<br><strong>Correo:</strong> articulacionterritorial.seguridad@quilicura.cl</p>
+
+<div class="carousel">
+  <img src="TERRI.1.png" alt="Imagen 1">
+  <img src="TERRI2.png" alt="Imagen 2">
+  <img src="TERRI3.png" alt="Imagen 3">
+  <img src="TERRI4.png" alt="Imagen 4">
+  <img src="TERRI5.png" alt="Imagen 5">
+  <img src="TERRI6.png" alt="Imagen 6">
+</div>
+
+<h3 class="detalle-subtitulo">Centro de Atención a Víctimas</h3>
+<p>Atención psicosocial a personas víctimas de violencia, delitos o vulneración de derechos. Asesoramos a través de redes de apoyo municipal.</p>
+<p><strong>Dirección:</strong> Ignacio Serrano Nº557<br><strong>WhatsApp:</strong> +569 3283 8516 / 2 3384 2092</p>
+<p><strong>Horario:</strong> Lunes a jueves de 08:30 a 17:30 horas, viernes de 08:30 a 16:30 horas.</p>
+
+<h3 class="detalle-subtitulo">Delegación Municipal Sector Sur</h3>
+<p>Acercamos servicios municipales a la comunidad del sur de Quilicura. Dotación permanente de Seguridad Pública.</p>
+<p><strong>Dirección:</strong> Camino del Cerro Nº1676<br><strong>Teléfono:</strong> 2 2944 4739</p>
+
+  <section class="section" id="video">
+    <h2 style="text-align: center; color: #b90069;">Video institucional</h2>
+    <div class="video-container" style="max-width: 800px; margin: auto;">
+      <iframe src="https://www.youtube.com/embed/vMKnrVL0ly8" 
+              title="Video institucional DSPC"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>
+     
+    </div>
+  </section>  <footer id="contacto">
+    <p style="font-weight: bold; font-size: 20px; color: #800080;">Síguenos en nuestras redes sociales</p>
+    <div>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 40px; margin: 10px;">
+      </a>
+      <a href="https://youtu.be/vMKnrVL0ly8?si=A3Dc9nGfSK1mKdwC" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" style="width: 40px; margin: 10px;">
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" style="width: 40px; margin: 10px;">
+      </a>
+    </div>
+    <img src="PIE_2.png" alt="Logo DSPC" style="width: 100%; height: 200px; object-fit: contain; display: block;">
+  </footer>
+</body>
+</html>
