@@ -160,17 +160,64 @@
   </nav>
   <header id="nosotros">
     <img src="Logo DSPC_2.jpg" alt="Logo DSPC" style="width: 100%; height: 200px; object-fit: contain; display: block;">
-    <div class="carousel">
-      <img src="Camioneta_1.JPG" alt="Imagen 1">
-      <img src="Camioneta_2.JPG" alt="Imagen 2">
-      <img src="Camara_1.jpg" alt="Imagen 3">
-      <img src="Drone.JPG" alt="Imagen 4">
-      <img src="Monoposte.png" alt="Imagen 5">
-    </div>
-      </header>
+    <!-- Carrusel de imágenes -->
+<div class="carrusel-contenedor">
+  <div class="carrusel-imagenes">
+    <img src="Camioneta_1.JPG" alt="Imagen 1">
+    <img src="Camioneta_2.jpg" alt="Imagen 2">
+    <img src="Camara_1.jpg" alt="Imagen 3">
+    <img src="Drone.jpg" alt="Imagen 4">
+    <img src="Monoposte.png" alt="Imagen 5">
+  </div>
 </div>
 
 <style>
+/* Contenedor general del carrusel */
+.carrusel-contenedor {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Línea de imágenes que se deslizan */
+.carrusel-imagenes {
+  display: flex;
+  animation: deslizarCarrusel 25s linear infinite;
+  width: calc(5 * 100%); /* 5 imágenes */
+}
+
+/* Estilo para cada imagen */
+.carrusel-imagenes img {
+  width: 100%;
+  height: 300px; /* Ajusta el alto deseado */
+  object-fit: cover;
+  flex: 0 0 100%;
+  border-radius: 12px;
+}
+
+/* Animación */
+@keyframes deslizarCarrusel {
+  0% { transform: translateX(0%); }
+  20% { transform: translateX(0%); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(-400%); }
+}
+
+/* Responsivo en móvil */
+@media (max-width: 600px) {
+  .carrusel-imagenes img {
+    height: 200px;
+  }
+}
+</style>
 .carousel {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
