@@ -3,334 +3,439 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dirección de Seguridad Pública y Comunitaria de Quilicura. Sitio institucional moderno, accesible y adaptable.">
-<meta property="og:title" content="Seguridad Pública Quilicura">
-<meta property="og:description" content="Sitio institucional renovado con atención 24/7, programas, cobertura territorial y contacto directo.">
-<meta property="og:type" content="website">
+<meta name="description" content="Dirección de Seguridad Pública y Comunitaria de Quilicura. Sitio actualizado y mejorado.">
 <title>Seguridad Pública Quilicura</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root,[data-theme="light"]{
---text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
---text-sm:clamp(.875rem,.8rem + .35vw,1rem);
---text-base:clamp(1rem,.95rem + .25vw,1.125rem);
---text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
---text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
---text-2xl:clamp(2rem,1.2rem + 2.5vw,3.75rem);
---space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.25rem;
---space-6:1.5rem; --space-8:2rem; --space-10:2.5rem; --space-12:3rem; --space-16:4rem; --space-20:5rem;
---radius-sm:.375rem; --radius-md:.75rem; --radius-lg:1rem; --radius-xl:1.5rem; --radius-full:999px;
---content:1200px;
---font-body:'Satoshi',system-ui,sans-serif;
---font-display:'Cabinet Grotesk','Satoshi',system-ui,sans-serif;
---color-bg:#f7f6f2; --color-surface:#fcfbf8; --color-surface-2:#f0ece6; --color-surface-3:#e7e0d7;
---color-border:rgba(40,37,29,.12); --color-text:#1f2230; --color-text-muted:#666d7b;
---color-primary:#c20064; --color-primary-hover:#a10053; --color-secondary:#273187; --color-highlight:#f0e800;
---shadow-sm:0 1px 2px rgba(0,0,0,.08); --shadow-md:0 14px 40px rgba(19,26,57,.12); --shadow-lg:0 20px 60px rgba(19,26,57,.18);
---overlay:rgba(247,246,242,.86);
+:root,
+[data-theme="light"]{
+--text-xs: clamp(.75rem,.7rem .25vw,.875rem);
+--text-sm: clamp(.875rem,.8rem .35vw,1rem);
+--text-base: clamp(1rem,.95rem .25vw,1.125rem);
+--text-lg: clamp(1.125rem,1rem .75vw,1.5rem);
+--text-xl: clamp(1.5rem,1.2rem 1.25vw,2.25rem);
+--text-2xl: clamp(2rem,1.2rem 2.5vw,3.5rem);
+
+--space-2: .5rem;
+--space-4: 1rem;
+--space-6: 1.5rem;
+--space-8: 2rem;
+--space-12: 3rem;
+--space-16: 4rem;
+
+--radius-md: .75rem;
+--radius-lg: 1rem;
+--radius-xl: 1.5rem;
+
+--content: 1200px;
+
+--font-body: 'Instrument Sans', system-ui, sans-serif;
+--font-display: 'Montserrat', system-ui, sans-serif;
+
+--color-bg: #f7f6f2;
+--color-surface: #ffffff;
+--color-surface-2: #f4f1ec;
+--color-border: #ddd7cf;
+--color-text: #1f2230;
+--color-text-muted: #5f6475;
+--color-primary: #c20064;
+--color-secondary: #273187;
+--color-highlight: #f0e800;
+
+--shadow-sm: 0 1px 2px rgb(0 0 0 / .08);
+--shadow-md: 0 12px 32px rgb(0 0 0 / .12);
 }
 
 [data-theme="dark"]{
---color-bg:#12151d; --color-surface:#181d28; --color-surface-2:#202735; --color-surface-3:#293243;
---color-border:rgba(237,241,248,.12); --color-text:#eef2f8; --color-text-muted:#b8c2d1;
---color-primary:#f05ba7; --color-primary-hover:#ff7dbd; --color-secondary:#98abff; --color-highlight:#ffe85d;
---shadow-sm:0 1px 2px rgba(0,0,0,.25); --shadow-md:0 14px 40px rgba(0,0,0,.25); --shadow-lg:0 20px 60px rgba(0,0,0,.32);
---overlay:rgba(18,21,29,.86);
+--color-bg: #111319;
+--color-surface: #181c25;
+--color-surface-2: #202632;
+--color-border: #31384a;
+--color-text: #edf1f8;
+--color-text-muted: #b7c0cf;
+--color-primary: #ef4b9a;
+--color-secondary: #8ea2ff;
+--color-highlight: #ffe85d;
 }
 
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+*{
+box-sizing: border-box;
+}
+
+html{
+scroll-behavior: smooth;
+}
+
 body{
-margin:0;min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;color:var(--color-text);
-background:
-radial-gradient(circle at top left,rgba(194,0,100,.08),transparent 32%),
-radial-gradient(circle at top right,rgba(39,49,135,.10),transparent 30%),
-linear-gradient(180deg,var(--color-bg),var(--color-surface-2));
+margin: 0;
+font-family: var(--font-body);
+font-size: var(--text-base);
+line-height: 1.6;
+color: var(--color-text);
+background: linear-gradient(180deg, var(--color-bg), var(--color-surface-2));
 }
 
-img,svg,iframe,audio{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-
-.sr-only{
-position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
-clip:rect(0,0,0,0);white-space:nowrap;border:0;
+img{
+display: block;
+max-width: 100%;
+height: auto;
 }
 
-.skip-link{
-position:absolute;left:1rem;top:-100px;padding:.85rem 1rem;background:var(--color-secondary);
-color:#fff;border-radius:var(--radius-full);z-index:2000;
+a{
+text-decoration: none;
+color: inherit;
 }
-.skip-link:focus{top:1rem}
 
-.container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
+.container{
+width: min(calc(100% - 2rem), var(--content));
+margin: auto;
+}
 
 .topbar{
-position:sticky;top:0;z-index:1200;backdrop-filter:blur(16px);
-background:var(--overlay);border-bottom:1px solid var(--color-border);
+position: sticky;
+top: 0;
+z-index: 1000;
+backdrop-filter: blur(12px);
+background: rgba(255,255,255,.82);
+border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .topbar{
+background: rgba(24,28,37,.82);
 }
 
 .topbar-inner{
-display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:.9rem 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 1rem;
+padding: 1rem 0;
 }
 
-.brand{display:flex;align-items:center;gap:var(--space-3);min-width:0}
+.brand{
+display: flex;
+align-items: center;
+gap: .85rem;
+font-weight: 800;
+}
+
 .logo-principal{
-width:62px;height:62px;object-fit:contain;background:#fff;border-radius:1rem;padding:.35rem;
-box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,.05);flex:0 0 auto;
+width: 58px;
+height: 58px;
+object-fit: contain;
+border-radius: 12px;
+background: #fff;
+padding: .2rem;
+box-shadow: var(--shadow-sm);
 }
 
-.brand-text{display:grid;gap:.15rem;line-height:1.1}
-.brand-title{font-family:var(--font-display);font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
-.brand-subtitle{color:var(--color-text-muted);font-size:var(--text-xs)}
+.brand-text{
+font-size: 1rem;
+line-height: 1.2;
+}
 
-.nav-wrap{display:flex;align-items:center;gap:.75rem}
 nav ul{
-display:flex;align-items:center;gap:.4rem;list-style:none;margin:0;padding:0;
+display: flex;
+flex-wrap: wrap;
+gap: .6rem;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
-nav a,.theme-toggle,.menu-toggle,.audio-toggle{
-min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius-full);
-border:1px solid transparent;padding:.75rem 1rem;color:var(--color-text-muted);background:transparent;transition:180ms ease;
+nav a,
+.theme-toggle{
+color: var(--color-text-muted);
+padding: .7rem .9rem;
+border-radius: 999px;
+border: 1px solid transparent;
+background: none;
+font: inherit;
+cursor: pointer;
 }
 
-nav a:hover,nav a:focus-visible,.theme-toggle:hover,.theme-toggle:focus-visible,.menu-toggle:hover,.menu-toggle:focus-visible,.audio-toggle:hover,.audio-toggle:focus-visible{
-color:var(--color-text);background:var(--color-surface);border-color:var(--color-border);
+nav a:hover,
+.theme-toggle:hover{
+background: var(--color-surface-2);
+color: var(--color-text);
 }
 
-.menu-toggle{display:none}
-
-.audio-toggle{
-position:fixed;right:1rem;bottom:1rem;z-index:1400;background:var(--color-secondary);color:#fff;
-border-color:transparent;box-shadow:var(--shadow-lg);gap:.5rem;padding-inline:1rem;
+header,
+section,
+footer{
+padding: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
 
-.audio-toggle:hover,.audio-toggle:focus-visible{background:#1c256e;color:#fff}
-
-main section,main header,footer{padding:clamp(3rem,6vw,5rem) 0}
-.hero{padding-top:clamp(3rem,8vw,6rem)}
-
-.hero-grid,.programs,.contact-grid,.stats,.cards,.gallery,.social-grid,.quick-links{
-display:grid;gap:var(--space-4);
+.hero-grid,
+.programs,
+.contact-grid,
+.stats,
+.cards,
+.gallery{
+display: grid;
+gap: 1rem;
 }
 
-.hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);align-items:center}
-.programs{grid-template-columns:repeat(2,minmax(0,1fr))}
-.contact-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.stats,.cards{grid-template-columns:repeat(4,minmax(0,1fr))}
-.gallery{grid-template-columns:repeat(5,minmax(0,1fr))}
-.social-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.quick-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hero-grid{
+grid-template-columns: 1.1fr .9fr;
+align-items: center;
+}
+
+.programs{
+grid-template-columns: repeat(2,1fr);
+}
+
+.contact-grid{
+grid-template-columns: repeat(3,1fr);
+}
+
+.stats,
+.cards{
+grid-template-columns: repeat(4,1fr);
+}
+
+.gallery{
+grid-template-columns: repeat(5,1fr);
+}
 
 .eyebrow{
-display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .85rem;border-radius:var(--radius-full);
-background:rgba(194,0,100,.08);color:var(--color-primary);font-size:var(--text-sm);font-weight:700;
+display: inline-block;
+padding: .45rem .8rem;
+border-radius: 999px;
+background: rgba(194,0,100,.08);
+color: var(--color-primary);
+font-size: var(--text-sm);
+font-weight: 700;
 }
 
-.hero h1,.section-title,.card h3,.footer-title{
-font-family:var(--font-display);letter-spacing:-.03em;line-height:1.05;margin:0;
+.hero h1,
+.section-title{
+font-family: var(--font-display);
+line-height: 1.05;
 }
 
-.hero h1{font-size:var(--text-2xl);max-width:11ch;margin:.9rem 0 1rem}
-.section-kicker{color:var(--color-primary);font-size:var(--text-sm);font-weight:700;margin-bottom:.45rem;display:inline-block}
-.section-title{font-size:var(--text-xl);margin-bottom:.75rem}
-.lead,.muted{color:var(--color-text-muted);max-width:70ch}
+.hero h1{
+font-size: var(--text-2xl);
+margin: .8rem 0 1rem;
+}
 
-.btns{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+.section-title{
+font-size: var(--text-xl);
+margin-bottom: .75rem;
+}
+
+.muted{
+color: var(--color-text-muted);
+}
+
+.btns{
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+margin-top: 1.4rem;
+}
+
 .btn{
-min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.9rem 1.2rem;
-border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;border:1px solid transparent;
-transition:transform 180ms ease,background 180ms ease,border-color 180ms ease,color 180ms ease;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 48px;
+padding: .9rem 1.2rem;
+border-radius: 999px;
+font-weight: 700;
 }
 
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--color-primary);color:#fff}
-.btn-primary:hover{background:var(--color-primary-hover)}
-.btn-secondary{background:var(--color-surface);color:var(--color-text);border-color:var(--color-border)}
+.btn-primary{
+background: var(--color-primary);
+color: #fff;
+}
 
-.card,.stat-card,.social-card,.quick-card{
-background:color-mix(in srgb,var(--color-surface) 90%, transparent);
-border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow-sm);
+.btn-secondary{
+background: var(--color-surface);
+color: var(--color-text);
+border: 1px solid var(--color-border);
+}
+
+.card{
+background: var(--color-surface);
+border: 1px solid var(--color-border);
+border-radius: var(--radius-lg);
+padding: 1.2rem;
+box-shadow: var(--shadow-sm);
 }
 
 .hero-card{
-padding:var(--space-6);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);
-background:linear-gradient(180deg,color-mix(in srgb,var(--color-surface) 82%, transparent),var(--color-surface));
-position:relative;overflow:hidden;
-}
-
-.hero-card::after{
-content:"";position:absolute;inset:auto -60px -60px auto;width:180px;height:180px;
-background:radial-gradient(circle,rgba(240,232,0,.35),transparent 70%);pointer-events:none;
+border-radius: var(--radius-xl);
+padding: var(--space-6);
+box-shadow: var(--shadow-md);
 }
 
 .hotline{
-display:grid;gap:.6rem;padding:var(--space-6);border-radius:var(--radius-xl);
-background:linear-gradient(135deg,var(--color-secondary),#151d56);color:#fff;position:relative;overflow:hidden;
-}
-
-.hotline::before{
-content:"";position:absolute;inset:-30% auto auto 65%;width:160px;height:160px;
-background:rgba(255,255,255,.1);border-radius:50%;filter:blur(6px);
+display: grid;
+gap: .5rem;
+background: linear-gradient(135deg, var(--color-secondary), #18215a);
+color: #fff;
+border-radius: var(--radius-xl);
+padding: var(--space-6);
 }
 
 .hotline strong{
-font-size:clamp(2rem,4vw,3.5rem);display:inline-block;width:max-content;padding:.3rem 1rem;
-border-radius:1rem;background:var(--color-highlight);color:var(--color-secondary);line-height:1;
+font-size: clamp(2rem, 4vw, 3.5rem);
+display: inline-block;
+background: var(--color-highlight);
+color: var(--color-secondary);
+padding: .25rem 1rem;
+border-radius: .85rem;
+width: max-content;
 }
 
-.hero-mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;margin-top:1rem}
-.mini-card{
-background:color-mix(in srgb,white 14%, transparent);
-border:1px solid rgba(255,255,255,.18);border-radius:1rem;padding:.9rem;
+.metric{
+font-family: var(--font-display);
+font-size: clamp(2rem,4vw,3rem);
+line-height: 1;
+color: var(--color-secondary);
 }
-
-.mini-card strong{display:block;font-size:1.1rem;margin-bottom:.25rem}
-.metric{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--color-secondary);margin-bottom:.35rem}
 
 .table-wrap{
-overflow-x:auto;background:var(--color-surface);border:1px solid var(--color-border);
-border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);margin-top:1rem;
+overflow: auto;
+background: var(--color-surface);
+border: 1px solid var(--color-border);
+border-radius: var(--radius-lg);
 }
 
-table{width:100%;border-collapse:collapse}
-th,td{padding:1rem;text-align:left;border-bottom:1px solid var(--color-border);vertical-align:top}
-th{background:var(--color-surface-2);font-size:var(--text-sm);color:var(--color-text)}
-tr:last-child td{border-bottom:0}
+table{
+width: 100%;
+border-collapse: collapse;
+}
+
+th, td{
+padding: 1rem;
+border-bottom: 1px solid var(--color-border);
+text-align: left;
+}
+
+th{
+background: var(--color-surface-2);
+}
 
 .gallery img{
-width:100%;aspect-ratio:4 / 3;object-fit:cover;border-radius:1rem;border:1px solid var(--color-border);
-background:var(--color-surface-2);box-shadow:var(--shadow-sm);
-}
-
-.gallery-item{position:relative;overflow:hidden;border-radius:1rem}
-.gallery-item::after{
-content:attr(data-label);position:absolute;inset:auto 0 0 0;padding:.8rem;font-size:var(--text-xs);
-font-weight:700;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));
+width: 100%;
+height: 180px;
+object-fit: cover;
+border-radius: 1rem;
+border: 1px solid var(--color-border);
 }
 
 .video-frame{
-position:relative;border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--color-border);
-box-shadow:var(--shadow-lg);aspect-ratio:16 / 9;background:#000;
-}
-.video-frame iframe{width:100%;height:100%;border:0}
-
-.quick-card,.social-card{display:grid;gap:.55rem;min-height:100%}
-
-.social-card a{
-min-height:44px;display:inline-flex;align-items:center;gap:.6rem;font-weight:700;color:var(--color-primary);
+position: relative;
+padding-bottom: 56.25%;
+height: 0;
+border-radius: var(--radius-xl);
+overflow: hidden;
+border: 1px solid var(--color-border);
+box-shadow: var(--shadow-md);
 }
 
-.social-icon{
-width:42px;height:42px;border-radius:50%;display:inline-grid;place-items:center;
-background:rgba(194,0,100,.09);color:var(--color-primary);flex:0 0 auto;
-}
-
-.footer{padding-bottom:0}
-.footer-shell{
-background:linear-gradient(180deg,color-mix(in srgb,var(--color-surface) 90%, transparent),var(--color-surface-2));
-border-top:1px solid var(--color-border);overflow:hidden;
-}
-
-.footer-top{
-display:grid;grid-template-columns:1fr;gap:var(--space-6);align-items:stretch;
-padding:clamp(2.5rem,5vw,4rem) 0 1.5rem;
+.video-frame iframe{
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
 }
 
 .footer-logo-wrap{
-width:100%;border-radius:1.25rem;overflow:hidden;border:1px solid var(--color-border);
-background:var(--color-surface-3);box-shadow:var(--shadow-md);
+margin-top: 1rem;
+display: flex;
+justify-content: center;
 }
 
 .footer-logo{
-width:100%;height:clamp(260px,38vw,520px);object-fit:cover;object-position:center;background:var(--color-surface-2);
+max-width: 280px;
+width: 100%;
+object-fit: contain;
 }
 
-.footer-bar{
-display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding:1rem 0 2rem;
-border-top:1px solid var(--color-border);color:var(--color-text-muted);font-size:var(--text-sm);
+@media (max-width:980px){
+.hero-grid,
+.programs,
+.contact-grid{
+grid-template-columns: 1fr;
 }
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity 500ms ease,transform 500ms ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.stats,
+.cards{
+grid-template-columns: repeat(2,1fr);
+}
 
-@media (max-width:1080px){
-.hero-grid,.programs,.contact-grid,.social-grid,.quick-links,.footer-top{grid-template-columns:1fr}
-.stats,.cards,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gallery{
+grid-template-columns: repeat(2,1fr);
+}
+
 nav ul{
-position:absolute;right:1rem;top:calc(100% + .75rem);width:min(320px, calc(100vw - 2rem));
-padding:.75rem;background:var(--color-surface);border:1px solid var(--color-border);
-border-radius:1rem;box-shadow:var(--shadow-lg);display:none;flex-direction:column;align-items:stretch;
+display: none;
 }
-nav ul.open{display:flex}
-nav a{justify-content:flex-start;width:100%}
-.menu-toggle{display:inline-flex}
 }
 
-@media (max-width:720px){
-.container{width:min(calc(100% - 1.2rem),var(--content))}
-.topbar-inner,.btns{align-items:stretch}
-.brand-title{font-size:.98rem}
-.stats,.cards,.gallery,.hero-mini-grid{grid-template-columns:1fr}
-.hotline,.hero-card{padding:1.15rem}
-.footer-logo{min-height:180px}
-.footer-bar{flex-direction:column}
-.audio-toggle{right:.75rem;left:.75rem;bottom:.75rem}
+@media (max-width:640px){
+.stats,
+.cards,
+.gallery{
+grid-template-columns: 1fr;
 }
 
-@media (prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-.reveal,.reveal.visible,.btn:hover{transition:none;transform:none;opacity:1}
+.topbar-inner,
+.btns{
+flex-direction: column;
+align-items: stretch;
+}
+
+.brand{
+justify-content: center;
+}
+
+.brand-text{
+text-align: center;
+}
 }
 </style>
 </head>
 <body>
-<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
 
 <div class="topbar">
 <div class="container topbar-inner">
-<a class="brand" href="#inicio" aria-label="Ir al inicio de Seguridad Pública Quilicura">
-<img src="img/Logo_DSPC_2.jpg" alt="Logo Dirección de Seguridad Pública y Comunitaria" class="logo-principal" width="62" height="62" loading="eager" decoding="async">
-<span class="brand-text">
-<span class="brand-title">Seguridad Pública Quilicura</span>
-<span class="brand-subtitle">Dirección de Seguridad Pública y Comunitaria</span>
-</span>
+<a class="brand" href="#inicio">
+<img src=Logo DSPC_2.jpg alt="Logo Dirección de Seguridad Pública y Comunitaria" class="logo-principal">
+<span class="brand-text">Seguridad Pública Quilicura</span>
 </a>
 
-<div class="nav-wrap">
 <nav aria-label="Navegación principal">
-<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-<span class="sr-only">Abrir menú</span>☰
-</button>
-<ul id="menu-principal">
+<ul>
 <li><a href="#inicio">Inicio</a></li>
 <li><a href="#programas">Programas</a></li>
 <li><a href="#territorio">Territorio</a></li>
 <li><a href="#atencion">Atención</a></li>
-<li><a href="#redes">Redes</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
 </nav>
 
-<button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema">◐</button>
-</div>
+<button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">◐</button>
 </div>
 </div>
 
-<main id="contenido">
+<main>
 <header class="hero" id="inicio">
 <div class="container hero-grid">
-<div class="reveal visible">
+<div>
 <span class="eyebrow">Atención municipal 24/7</span>
-<h1>Seguridad pública más clara, actual y cercana para Quilicura.</h1>
-<p class="lead">
-Sitio institucional renovado con mejor organización, navegación más simple, visualización móvil,
-accesibilidad, enlaces directos y una presentación más sólida.
+<h1>Seguridad pública más clara, moderna y cercana para Quilicura.</h1>
+<p class="muted">
+Versión renovada del sitio institucional, con mejor estructura, accesibilidad,
+diseño adaptable, modo oscuro y una presentación más profesional para información
+operativa y comunitaria.
 </p>
 <div class="btns">
 <a class="btn btn-primary" href="#contacto">Ver contactos</a>
@@ -338,21 +443,11 @@ accesibilidad, enlaces directos y una presentación más sólida.
 </div>
 </div>
 
-<aside class="hero-card reveal visible" aria-label="Resumen operativo">
+<aside class="card hero-card">
 <div class="hotline">
 <span>Central de llamados de emergencia</span>
 <strong>1485</strong>
-<p>Atención operativa durante las 24 horas, todos los días del año.</p>
-<div class="hero-mini-grid">
-<div class="mini-card">
-<strong>Respuesta local</strong>
-<span>Coordinación territorial y derivación según requerimiento.</span>
-</div>
-<div class="mini-card">
-<strong>Apoyo comunitario</strong>
-<span>Orientación vecinal, patrullaje preventivo y cobertura operativa.</span>
-</div>
-</div>
+<p>Atención operativa las 24 horas, todos los días.</p>
 </div>
 </aside>
 </div>
@@ -360,57 +455,111 @@ accesibilidad, enlaces directos y una presentación más sólida.
 
 <section>
 <div class="container">
-<span class="section-kicker">Gestión institucional</span>
 <h2 class="section-title">Ejes de trabajo</h2>
-<p class="muted">Contenido organizado para una lectura más directa y útil para la comunidad.</p>
+<p class="muted">
+Contenido reorganizado para una lectura más simple y un sitio listo para visualización actual.
+</p>
 <div class="cards">
-<article class="card reveal"><h3>Disuasión del delito</h3><p class="muted">Patrullaje preventivo y apoyo operativo en terreno.</p></article>
-<article class="card reveal"><h3>Articulación territorial</h3><p class="muted">Trabajo con barrios, dirigentes y redes comunitarias.</p></article>
-<article class="card reveal"><h3>Atención a víctimas</h3><p class="muted">Orientación psicosocial y activación de redes de apoyo.</p></article>
-<article class="card reveal"><h3>Delegación sector sur</h3><p class="muted">Servicios municipales con presencia cercana.</p></article>
+<article class="card">
+<h3>Disuasión del delito</h3>
+<p class="muted">Patrullaje preventivo y apoyo operativo en terreno.</p>
+</article>
+<article class="card">
+<h3>Articulación territorial</h3>
+<p class="muted">Trabajo con barrios y organizaciones comunitarias.</p>
+</article>
+<article class="card">
+<h3>Atención a víctimas</h3>
+<p class="muted">Orientación psicosocial y activación de redes de apoyo.</p>
+</article>
+<article class="card">
+<h3>Delegación sector sur</h3>
+<p class="muted">Acercamiento de servicios municipales y presencia territorial.</p>
+</article>
 </div>
 </div>
 </section>
 
 <section id="territorio">
 <div class="container">
-<span class="section-kicker">Cobertura comunal</span>
-<h2 class="section-title">Presencia territorial</h2>
+<h2 class="section-title">Cobertura territorial</h2>
+<p class="muted">
+Se mantuvieron los datos del sitio original, con mejor jerarquía visual y lectura móvil.
+</p>
+
 <div class="stats">
-<div class="stat-card reveal"><div class="metric">830</div><p class="muted">Cámaras de vigilancia</p></div>
-<div class="stat-card reveal"><div class="metric">03</div><p class="muted">Drones activos</p></div>
-<div class="stat-card reveal"><div class="metric">15</div><p class="muted">Monopostes</p></div>
-<div class="stat-card reveal"><div class="metric">05</div><p class="muted">Motocicletas</p></div>
+<div class="card">
+<div class="metric">830</div>
+<p class="muted">Cámaras de vigilancia</p>
+</div>
+<div class="card">
+<div class="metric">03</div>
+<p class="muted">Drones activos</p>
+</div>
+<div class="card">
+<div class="metric">15</div>
+<p class="muted">Monopostes</p>
+</div>
+<div class="card">
+<div class="metric">05</div>
+<p class="muted">Motocicletas</p>
+</div>
 </div>
 </div>
 </section>
 
 <section id="programas">
 <div class="container">
-<span class="section-kicker">Oferta programática</span>
 <h2 class="section-title">Programas y convenios</h2>
+<p class="muted">
+Oferta programática ordenada en bloques más claros y una tabla más útil.
+</p>
+
 <div class="programs">
-<article class="card reveal">
+<article class="card">
 <h3>Programa Lazos</h3>
-<p class="muted">Apoyo confidencial a familias, niños, niñas y adolescentes.</p>
-<p><strong>Ubicación:</strong> Del Sembrador Nº530<br><strong>Contacto:</strong> +56 9 8123 3915 / +56 9 9481 0652</p>
+<p class="muted">
+Apoyo confidencial a familias, niños, niñas y adolescentes, con atención diferenciada.
+</p>
+<p>
+<strong>Ubicación:</strong> Del Sembrador Nº530<br>
+<strong>Contacto:</strong> 56 9 8123 3915 / 56 9 9481 0652
+</p>
 </article>
-<article class="card reveal">
+
+<article class="card">
 <h3>Dispositivos de intervención</h3>
-<p class="muted">Detección temprana, parentalidad positiva y acompañamiento familiar.</p>
+<p class="muted">
+Detección temprana, parentalidad positiva y terapia multisistémica.
+</p>
 </article>
 </div>
 
-<div class="table-wrap reveal">
-<table aria-label="Programas y tipo de apoyo">
+<div class="table-wrap" style="margin-top:1rem;">
+<table>
 <thead>
-<tr><th>Programa</th><th>Tipo de apoyo</th></tr>
+<tr>
+<th>Programa</th>
+<th>Tipo de apoyo</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>Senda Previene</td><td>Prevención, acompañamiento y acciones comunitarias.</td></tr>
-<tr><td>Centro de las Mujeres</td><td>Atención integral especializada y orientación.</td></tr>
-<tr><td>Programa Lazos</td><td>Intervención familiar y apoyo confidencial.</td></tr>
-<tr><td>Somos Barrio</td><td>Fortalecimiento comunitario y articulación territorial.</td></tr>
+<tr>
+<td>Senda Previene</td>
+<td>Prevención y acompañamiento</td>
+</tr>
+<tr>
+<td>Centro de las Mujeres</td>
+<td>Atención integral especializada</td>
+</tr>
+<tr>
+<td>Programa Lazos</td>
+<td>Intervención familiar</td>
+</tr>
+<tr>
+<td>Somos Barrio</td>
+<td>Fortalecimiento comunitario</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -419,188 +568,88 @@ accesibilidad, enlaces directos y una presentación más sólida.
 
 <section>
 <div class="container">
-<span class="section-kicker">Galería institucional</span>
-<h2 class="section-title">Equipamiento y despliegue</h2>
+<h2 class="section-title">Galería institucional</h2>
+<p class="muted">
+Estas imágenes deben ir dentro de la carpeta <strong>img</strong> del repositorio.
+</p>
 <div class="gallery">
-<figure class="gallery-item reveal" data-label="Camioneta 1"><img src="img/Camioneta_1.JPG" alt="Camioneta de seguridad municipal" width="800" height="600" loading="lazy"></figure>
-<figure class="gallery-item reveal" data-label="Camioneta 2"><img src="img/Camioneta_2.JPG" alt="Vehículo de seguridad municipal" width="800" height="600" loading="lazy"></figure>
-<figure class="gallery-item reveal" data-label="Cámaras"><img src="img/Camara_1.jpg" alt="Cámara de vigilancia de seguridad pública" width="800" height="600" loading="lazy"></figure>
-<figure class="gallery-item reveal" data-label="Dron"><img src="img/Drone.JPG" alt="Dron de seguridad pública" width="800" height="600" loading="lazy"></figure>
-<figure class="gallery-item reveal" data-label="Monoposte"><img src="img/Monoposte.png" alt="Monoposte de vigilancia" width="800" height="600" loading="lazy"></figure>
+<img src=Camioneta_1.JPG alt="Camioneta de seguridad municipal">
+<img src=Camioneta_2.JPG alt="Vehículo de seguridad municipal">
+<img src=Camara_1.jpg alt="Cámara de vigilancia">
+<img src=Drone.JPG alt="Dron de seguridad pública">
+<img src=Monoposte.png alt="Monoposte de vigilancia">
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">Video institucional</h2>
+<div class="video-frame">
+<iframe
+src="https://www.youtube.com/embed/vMKnrVL0ly8"
+title="Video institucional de seguridad pública"
+allowfullscreen
+loading="lazy">
+</iframe>
 </div>
 </div>
 </section>
 
 <section id="atencion">
 <div class="container">
-<span class="section-kicker">Atención municipal</span>
 <h2 class="section-title">Atención y orientación</h2>
 <div class="contact-grid">
-<article class="card reveal">
+<article class="card">
 <h3>Articulación Territorial</h3>
-<p>Ignacio Serrano Nº557<br><a href="mailto:articulacionterritorial.seguridad@quilicura.cl">articulacionterritorial.seguridad@quilicura.cl</a></p>
+<p>
+Ignacio Serrano Nº557<br>
+articulacionterritorial.seguridad@quilicura.cl
+</p>
 </article>
-<article class="card reveal">
+
+<article class="card">
 <h3>Centro de Atención a Víctimas</h3>
-<p>Ignacio Serrano Nº557<br>WhatsApp: <a href="https://wa.me/56932838516" target="_blank" rel="noopener noreferrer">+56 9 3283 8516</a><br>Teléfono: <a href="tel:+56233842092">2 3384 2092</a></p>
+<p>
+Ignacio Serrano Nº557<br>
+WhatsApp: 56 9 3283 8516<br>
+Teléfono: 2 3384 2092
+</p>
 </article>
-<article class="card reveal">
+
+<article class="card">
 <h3>Delegación Sector Sur</h3>
-<p>Camino del Cerro Nº1676<br>Teléfono: <a href="tel:+56229444739">2 2944 4739</a></p>
+<p>
+Camino del Cerro Nº1676<br>
+Teléfono: 2 2944 4739
+</p>
 </article>
 </div>
 </div>
 </section>
 
-<section id="redes">
+<footer id="contacto">
 <div class="container">
-<span class="section-kicker">Canales digitales</span>
-<h2 class="section-title">Redes sociales</h2>
-<div class="social-grid">
-<article class="social-card reveal">
-<h3>Instagram</h3>
-<p class="muted">Publicaciones y contenido visual institucional.</p>
-<a href="https://www.instagram.com/seguridadcomunitariaquilicura/" target="_blank" rel="noopener noreferrer">
-<span class="social-icon" aria-hidden="true">◎</span>Abrir Instagram
-</a>
-</article>
-<article class="social-card reveal">
-<h3>Facebook</h3>
-<p class="muted">Información comunitaria y publicaciones institucionales.</p>
-<a href="https://www.facebook.com/seguridadcomunitariaquilicura/?locale=es_LA" target="_blank" rel="noopener noreferrer">
-<span class="social-icon" aria-hidden="true">f</span>Abrir Facebook
-</a>
-</article>
-<article class="social-card reveal">
-<h3>YouTube</h3>
-<p class="muted">Videos institucionales y material de difusión.</p>
-<a href="https://www.youtube.com/watch?v=vMKnrVL0ly8" target="_blank" rel="noopener noreferrer">
-<span class="social-icon" aria-hidden="true">▶</span>Abrir YouTube
-</a>
-</article>
-<article class="social-card reveal">
-<h3>Correo de contacto</h3>
-<p class="muted">Canal directo para consultas y coordinación.</p>
-<a href="mailto:articulacionterritorial.seguridad@quilicura.cl">
-<span class="social-icon" aria-hidden="true">✉</span>Enviar correo
-</a>
-</article>
-</div>
-</div>
-</section>
+<p class="muted">Versión mejorada lista para revisar, adaptar y publicar en GitHub Pages.</p>
 
-<footer class="footer" id="contacto">
-<div class="footer-shell">
-<div class="container footer-top">
-<div>
-<span class="section-kicker">Cierre institucional</span>
-<h2 class="footer-title">Versión lista para revisar, adaptar y publicar.</h2>
-<p class="muted">Sitio con mejor navegación, mayor presencia visual, redes activas y estructura compatible con GitHub Pages.</p>
-<div class="btns">
-<a class="btn btn-primary" href="#inicio">Volver al inicio</a>
-<a class="btn btn-secondary" href="#redes">Ver redes sociales</a>
-</div>
-</div>
-<div class="footer-logo-wrap reveal">
-<img src="img/PIE_1.jpeg" alt="Imagen institucional de pie de página" class="footer-logo" width="1600" height="700" loading="lazy">
-</div>
-</div>
-
-<div class="container footer-bar">
-<span>Seguridad Pública Quilicura · Sitio institucional modernizado</span>
-<span>Preparado para publicación directa en GitHub Pages</span>
+<div class="footer-logo-wrap">
+<img src=PIE_1.jpeg alt="Imagen institucional de pie de página" class="footer-logo">
 </div>
 </div>
 </footer>
 </main>
 
-<audio id="ambientAudio" preload="auto" loop>
-<source src="audio/seguridad-ambiente.mp3" type="audio/mpeg">
-</audio>
-
-<button class="audio-toggle" id="audioToggle" type="button" aria-pressed="false">
-<span id="audioIcon">🔊</span>
-<span id="audioText">Activar ambiente</span>
-</button>
-
 <script>
 (function(){
-const themeBtn = document.querySelector('[data-theme-toggle]');
-const root = document.documentElement;
-let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-root.setAttribute('data-theme', theme);
+const t = document.querySelector('[data-theme-toggle]');
+const r = document.documentElement;
+let d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+r.setAttribute('data-theme', d);
 
-function updateTheme(){
-themeBtn.textContent = theme === 'dark' ? '☀' : '◐';
-themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
-}
-updateTheme();
-
-themeBtn.addEventListener('click', () => {
-theme = theme === 'dark' ? 'light' : 'dark';
-root.setAttribute('data-theme', theme);
-updateTheme();
+t && t.addEventListener('click', () => {
+d = d === 'dark' ? 'light' : 'dark';
+r.setAttribute('data-theme', d);
 });
-
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.getElementById('menu-principal');
-
-menuToggle.addEventListener('click', () => {
-const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-menuToggle.setAttribute('aria-expanded', String(!expanded));
-menu.classList.toggle('open');
-});
-
-document.querySelectorAll('#menu-principal a').forEach(link => {
-link.addEventListener('click', () => {
-if (window.innerWidth <= 1080) {
-menu.classList.remove('open');
-menuToggle.setAttribute('aria-expanded', 'false');
-}
-});
-});
-
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) entry.target.classList.add('visible');
-});
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-const audio = document.getElementById('ambientAudio');
-const audioToggle = document.getElementById('audioToggle');
-const audioText = document.getElementById('audioText');
-const audioIcon = document.getElementById('audioIcon');
-let playing = false;
-
-if (audio) audio.volume = 0.22;
-
-function updateAudioState(){
-audioToggle.setAttribute('aria-pressed', String(playing));
-audioText.textContent = playing ? 'Pausar ambiente' : 'Activar ambiente';
-audioIcon.textContent = playing ? '🔇' : '🔊';
-}
-
-audioToggle.addEventListener('click', async () => {
-if (!audio) return;
-try {
-if (!playing) {
-await audio.play();
-playing = true;
-} else {
-audio.pause();
-playing = false;
-}
-updateAudioState();
-} catch (e) {
-playing = false;
-updateAudioState();
-alert('El navegador bloqueó el audio automático. Presiona nuevamente para activarlo.');
-}
-});
-
-updateAudioState();
 })();
 </script>
 </body>
