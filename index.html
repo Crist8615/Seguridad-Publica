@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dirección de Seguridad Pública y Comunitaria de Quilicura. Sitio actualizado y mejorado.">
-<title>Seguridad Pública Quilicura</title>
+<meta name="description" content="Dirección de Seguridad Pública y Comunitaria de Quilicura. Información sobre emergencias, programas, resultados y participación ciudadana.">
+<title>Dirección de Seguridad Pública y Comunitaria - Quilicura</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root,
 [data-theme="light"]{
---text-xs: clamp(.75rem,.7rem .25vw,.875rem);
---text-sm: clamp(.875rem,.8rem .35vw,1rem);
---text-base: clamp(1rem,.95rem .25vw,1.125rem);
---text-lg: clamp(1.125rem,1rem .75vw,1.5rem);
---text-xl: clamp(1.5rem,1.2rem 1.25vw,2.25rem);
---text-2xl: clamp(2rem,1.2rem 2.5vw,3.5rem);
+--text-xs: clamp(.75rem,.7rem + .25vw,.875rem);
+--text-sm: clamp(.875rem,.8rem + .35vw,1rem);
+--text-base: clamp(1rem,.95rem + .25vw,1.125rem);
+--text-lg: clamp(1.125rem,1rem + .75vw,1.5rem);
+--text-xl: clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+--text-2xl: clamp(2rem,1.8rem + 2.5vw,3.5rem);
+--text-3xl: clamp(2.5rem,2rem + 3vw,4rem);
 
 --space-2: .5rem;
 --space-4: 1rem;
@@ -36,370 +37,238 @@
 --font-body: 'Instrument Sans', system-ui, sans-serif;
 --font-display: 'Montserrat', system-ui, sans-serif;
 
---color-bg: #f7f6f2;
+--color-bg: #f8f9fa;
 --color-surface: #ffffff;
---color-surface-2: #f4f1ec;
---color-border: #ddd7cf;
---color-text: #1f2230;
---color-text-muted: #5f6475;
+--color-surface-2: #f5f7fa;
+--color-border: #e0e6ed;
+--color-text: #1a202c;
+--color-text-muted: #4a5568;
 --color-primary: #c20064;
---color-secondary: #273187;
+--color-secondary: #2d3748;
 --color-highlight: #f0e800;
+--color-success: #38a169;
 
---shadow-sm: 0 1px 2px rgb(0 0 0 / .08);
---shadow-md: 0 12px 32px rgb(0 0 0 / .12);
+--shadow-sm: 0 1px 3px rgb(0 0 0 / 0.1);
+--shadow-md: 0 4px 20px rgb(0 0 0 / 0.12);
+--shadow-lg: 0 10px 40px rgb(0 0 0 / 0.15);
 }
 
 [data-theme="dark"]{
---color-bg: #111319;
---color-surface: #181c25;
---color-surface-2: #202632;
---color-border: #31384a;
---color-text: #edf1f8;
---color-text-muted: #b7c0cf;
---color-primary: #ef4b9a;
---color-secondary: #8ea2ff;
+--color-bg: #0f1419;
+--color-surface: #1a202c;
+--color-surface-2: #2d3748;
+--color-border: #4a5568;
+--color-text: #e2e8f0;
+--color-text-muted: #a0aec0;
+--color-primary: #e53e3e;
+--color-secondary: #63b3ed;
 --color-highlight: #ffe85d;
+--color-success: #48bb78;
 }
 
-*{
-box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html{
-scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-body{
+body {
 margin: 0;
 font-family: var(--font-body);
 font-size: var(--text-base);
-line-height: 1.6;
+line-height: 1.7;
 color: var(--color-text);
-background: linear-gradient(180deg, var(--color-bg), var(--color-surface-2));
+background: var(--color-bg);
 }
 
-img{
-display: block;
-max-width: 100%;
-height: auto;
+img { display: block; max-width: 100%; height: auto; }
+
+a { text-decoration: none; color: inherit; }
+
+.container { width: min(calc(100% - 2rem), var(--content)); margin: auto; }
+
+.topbar {
+position: sticky; top: 0; z-index: 1000;
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--color-border);
 }
 
-a{
+[data-theme="dark"] .topbar { background: rgba(26,32,44,0.9); }
+
+.topbar-inner {
+display: flex; justify-content: space-between; align-items: center;
+padding: var(--space-4) 0; gap: var(--space-4);
+}
+
+.brand {
+display: flex; align-items: center; gap: 1rem;
+font-family: var(--font-display); font-weight: 800; font-size: var(--text-lg);
+}
+
+.logo-principal {
+width: 64px; height: 64px; object-fit: contain;
+border-radius: var(--radius-md); background: var(--color-surface);
+padding: 0.25rem; box-shadow: var(--shadow-md);
+}
+
+header, section, footer { padding: clamp(3rem, 6vw, 5rem) 0; }
+
+.hero-grid { display: grid; grid-template-columns: 1fr 0.8fr; gap: var(--space-8); align-items: start; }
+
+.programs-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); }
+
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); }
+
+.eyebrow {
+display: inline-flex; align-items: center; gap: 0.5rem;
+padding: 0.5rem 1rem; border-radius: 999px;
+background: rgba(194,0,100,0.1); color: var(--color-primary);
+font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.05em;
+}
+
+.hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.1; margin: var(--space-2) 0 var(--space-4); }
+
+.section-title {
+font-family: var(--font-display); font-size: var(--text-2xl);
+margin-bottom: var(--space-4); color: var(--color-text);
+}
+
+.muted { color: var(--color-text-muted); }
+
+.btns { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); }
+
+.btn {
+display: inline-flex; align-items: center; justify-content: center;
+min-height: 52px; padding: 1rem 1.5rem; border-radius: 999px;
+font-weight: 700; font-size: var(--text-sm); transition: all 0.2s ease;
 text-decoration: none;
-color: inherit;
 }
 
-.container{
-width: min(calc(100% - 2rem), var(--content));
-margin: auto;
+.btn-primary {
+background: linear-gradient(135deg, var(--color-primary), #a80052);
+color: white; box-shadow: var(--shadow-sm);
 }
 
-.topbar{
-position: sticky;
-top: 0;
-z-index: 1000;
-backdrop-filter: blur(12px);
-background: rgba(255,255,255,.82);
-border-bottom: 1px solid var(--color-border);
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.btn-secondary {
+background: var(--color-surface); color: var(--color-text);
+border: 2px solid var(--color-border);
 }
 
-[data-theme="dark"] .topbar{
-background: rgba(24,28,37,.82);
+.btn-secondary:hover { background: var(--color-primary); color: white; border-color: var(--color-primary); }
+
+.card {
+background: var(--color-surface); border: 1px solid var(--color-border);
+border-radius: var(--radius-xl); padding: var(--space-6);
+box-shadow: var(--shadow-sm); transition: all 0.3s ease;
 }
 
-.topbar-inner{
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 1rem;
-padding: 1rem 0;
-}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
-.brand{
-display: flex;
-align-items: center;
-gap: .85rem;
-font-weight: 800;
-}
+.hero-card { border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-lg); }
 
-.logo-principal{
-width: 58px;
-height: 58px;
-object-fit: contain;
-border-radius: 12px;
-background: #fff;
-padding: .2rem;
-box-shadow: var(--shadow-sm);
-}
-
-.brand-text{
-font-size: 1rem;
-line-height: 1.2;
-}
-
-nav ul{
-display: flex;
-flex-wrap: wrap;
-gap: .6rem;
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-nav a,
-.theme-toggle{
-color: var(--color-text-muted);
-padding: .7rem .9rem;
-border-radius: 999px;
-border: 1px solid transparent;
-background: none;
-font: inherit;
-cursor: pointer;
-}
-
-nav a:hover,
-.theme-toggle:hover{
-background: var(--color-surface-2);
-color: var(--color-text);
-}
-
-header,
-section,
-footer{
-padding: clamp(2.5rem, 5vw, 4.5rem) 0;
-}
-
-.hero-grid,
-.programs,
-.contact-grid,
-.stats,
-.cards,
-.gallery{
-display: grid;
-gap: 1rem;
-}
-
-.hero-grid{
-grid-template-columns: 1.1fr .9fr;
-align-items: center;
-}
-
-.programs{
-grid-template-columns: repeat(2,1fr);
-}
-
-.contact-grid{
-grid-template-columns: repeat(3,1fr);
-}
-
-.stats,
-.cards{
-grid-template-columns: repeat(4,1fr);
-}
-
-.gallery{
-grid-template-columns: repeat(5,1fr);
-}
-
-.eyebrow{
-display: inline-block;
-padding: .45rem .8rem;
-border-radius: 999px;
-background: rgba(194,0,100,.08);
-color: var(--color-primary);
-font-size: var(--text-sm);
-font-weight: 700;
-}
-
-.hero h1,
-.section-title{
-font-family: var(--font-display);
-line-height: 1.05;
-}
-
-.hero h1{
-font-size: var(--text-2xl);
-margin: .8rem 0 1rem;
-}
-
-.section-title{
-font-size: var(--text-xl);
-margin-bottom: .75rem;
-}
-
-.muted{
-color: var(--color-text-muted);
-}
-
-.btns{
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
-margin-top: 1.4rem;
-}
-
-.btn{
-display: inline-flex;
-align-items: center;
-justify-content: center;
-min-height: 48px;
-padding: .9rem 1.2rem;
-border-radius: 999px;
-font-weight: 700;
-}
-
-.btn-primary{
-background: var(--color-primary);
-color: #fff;
-}
-
-.btn-secondary{
-background: var(--color-surface);
-color: var(--color-text);
-border: 1px solid var(--color-border);
-}
-
-.card{
-background: var(--color-surface);
-border: 1px solid var(--color-border);
-border-radius: var(--radius-lg);
-padding: 1.2rem;
-box-shadow: var(--shadow-sm);
-}
-
-.hero-card{
-border-radius: var(--radius-xl);
-padding: var(--space-6);
-box-shadow: var(--shadow-md);
-}
-
-.hotline{
-display: grid;
-gap: .5rem;
-background: linear-gradient(135deg, var(--color-secondary), #18215a);
-color: #fff;
-border-radius: var(--radius-xl);
-padding: var(--space-6);
-}
-
-.hotline strong{
-font-size: clamp(2rem, 4vw, 3.5rem);
-display: inline-block;
-background: var(--color-highlight);
-color: var(--color-secondary);
-padding: .25rem 1rem;
-border-radius: .85rem;
-width: max-content;
-}
-
-.metric{
-font-family: var(--font-display);
-font-size: clamp(2rem,4vw,3rem);
-line-height: 1;
-color: var(--color-secondary);
-}
-
-.table-wrap{
-overflow: auto;
-background: var(--color-surface);
-border: 1px solid var(--color-border);
-border-radius: var(--radius-lg);
-}
-
-table{
-width: 100%;
-border-collapse: collapse;
-}
-
-th, td{
-padding: 1rem;
-border-bottom: 1px solid var(--color-border);
-text-align: left;
-}
-
-th{
-background: var(--color-surface-2);
-}
-
-.gallery img{
-width: 100%;
-height: 180px;
-object-fit: cover;
-border-radius: 1rem;
-border: 1px solid var(--color-border);
-}
-
-.video-frame{
-position: relative;
-padding-bottom: 56.25%;
-height: 0;
-border-radius: var(--radius-xl);
-overflow: hidden;
-border: 1px solid var(--color-border);
-box-shadow: var(--shadow-md);
-}
-
-.video-frame iframe{
-position: absolute;
-inset: 0;
-width: 100%;
-height: 100%;
-}
-
-.footer-logo-wrap{
-margin-top: 1rem;
-display: flex;
-justify-content: center;
-}
-
-.footer-logo{
-max-width: 280px;
-width: 100%;
-object-fit: contain;
-}
-
-@media (max-width:980px){
-.hero-grid,
-.programs,
-.contact-grid{
-grid-template-columns: 1fr;
-}
-
-.stats,
-.cards{
-grid-template-columns: repeat(2,1fr);
-}
-
-.gallery{
-grid-template-columns: repeat(2,1fr);
-}
-
-nav ul{
-display: none;
-}
-}
-
-@media (max-width:640px){
-.stats,
-.cards,
-.gallery{
-grid-template-columns: 1fr;
-}
-
-.topbar-inner,
-.btns{
-flex-direction: column;
-align-items: stretch;
-}
-
-.brand{
-justify-content: center;
-}
-
-.brand-text{
+.hotline {
+display: grid; gap: var(--space-2);
+background: linear-gradient(135deg, var(--color-secondary), #4a5568);
+color: white; border-radius: var(--radius-xl); padding: var(--space-6);
 text-align: center;
 }
+
+.hotline strong {
+font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1;
+background: var(--color-highlight); color: var(--color-secondary);
+padding: 0.5rem 1.5rem; border-radius: 999px; width: max-content; margin: auto;
+}
+
+.metric {
+font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 3.5rem);
+line-height: 1; color: var(--color-primary); font-weight: 800;
+}
+
+.emergency-block {
+background: linear-gradient(135deg, var(--color-success), #2f855a);
+color: white; border-radius: var(--radius-xl); padding: var(--space-8);
+text-align: center; box-shadow: var(--shadow-lg);
+}
+
+.emergency-block strong { font-size: clamp(3rem, 10vw, 5rem); display: block; margin: var(--space-4) 0; }
+
+.feature-list {
+list-style: none; padding: 0; margin: var(--space-6) 0 0;
+}
+
+.feature-list li {
+display: flex; align-items: flex-start; gap: var(--space-4);
+margin-bottom: var(--space-4); padding: var(--space-2);
+background: var(--color-surface-2); border-radius: var(--radius-md);
+border-left: 4px solid var(--color-primary);
+}
+
+.feature-list li::before {
+content: "✓"; color: var(--color-success); font-weight: 800; font-size: var(--text-lg);
+flex-shrink: 0; margin-top: 0.2rem;
+}
+
+.table-wrap {
+overflow-x: auto; background: var(--color-surface);
+border: 1px solid var(--color-border); border-radius: var(--radius-xl);
+margin-top: var(--space-6);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+
+th, td { padding: 1.2rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+
+th { background: var(--color-surface-2); font-weight: 700; color: var(--color-secondary); }
+
+.gallery {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: var(--space-4);
+}
+
+.gallery img {
+height: 200px; object-fit: cover; border-radius: var(--radius-lg);
+border: 1px solid var(--color-border); transition: transform 0.3s ease;
+}
+
+.gallery img:hover { transform: scale(1.05); }
+
+.video-frame {
+position: relative; padding-bottom: 56.25%; height: 0;
+border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border);
+box-shadow: var(--shadow-lg); background: var(--color-surface-2);
+}
+
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.footer-logo-wrap { margin-top: var(--space-6); text-align: center; }
+
+.footer-logo { max-width: 300px; margin: auto; }
+
+nav ul {
+display: flex; flex-wrap: wrap; gap: 0.25rem; list-style: none; padding: 0; margin: 0;
+}
+
+nav a, .theme-toggle {
+color: var(--color-text-muted); padding: 0.75rem 1.25rem;
+border-radius: 999px; border: 1px solid transparent;
+transition: all 0.2s ease; font-weight: 600;
+}
+
+nav a:hover, .theme-toggle:hover {
+background: var(--color-surface-2); color: var(--color-text); border-color: var(--color-border);
+}
+
+@media (max-width: 980px) {
+.hero-grid { grid-template-columns: 1fr; text-align: center; gap: var(--space-6); }
+.programs-grid, .contact-grid, .stats-grid, .features-grid { grid-template-columns: 1fr; }
+nav ul { display: none; }
+}
+
+@media (max-width: 640px) {
+.btns, .topbar-inner { flex-direction: column; align-items: stretch; }
+.brand { justify-content: center; }
 }
 </style>
 </head>
@@ -407,22 +276,23 @@ text-align: center;
 
 <div class="topbar">
 <div class="container topbar-inner">
-<a class="brand" href="#inicio">
-<img src=quilicura_1.jpeg alt="Logo Dirección de Seguridad Pública y Comunitaria" class="logo-principal">
-<span class="brand-text">Seguridad Pública Quilicura</span>
+<a class="brand" href="#inicio" aria-label="Inicio">
+<img src="quilicura_1.jpeg" alt="Logo Dirección de Seguridad Pública y Comunitaria Quilicura" class="logo-principal">
+<span>Seguridad Pública Quilicura</span>
 </a>
 
 <nav aria-label="Navegación principal">
 <ul>
 <li><a href="#inicio">Inicio</a></li>
+<li><a href="#mision">Misión</a></li>
+<li><a href="#queencontraras">Qué encontrarás</a></li>
 <li><a href="#programas">Programas</a></li>
 <li><a href="#territorio">Territorio</a></li>
-<li><a href="#atencion">Atención</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
 </nav>
 
-<button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">◐</button>
+<button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema (claro/oscuro)">◐</button>
 </div>
 </div>
 
@@ -430,79 +300,106 @@ text-align: center;
 <header class="hero" id="inicio">
 <div class="container hero-grid">
 <div>
-<span class="eyebrow">Atención municipal 24/7</span>
-<h1>Seguridad pública más clara, moderna y cercana para Quilicura.</h1>
+<span class="eyebrow">Seguridad integrada para Quilicura</span>
+<h1>Dirección de Seguridad Pública y Comunitaria</h1>
+<p>Seguridad integrada para Quilicura — prevención, atención y participación ciudadana.</p>
 <p class="muted">
-Versión renovada del sitio institucional, con mejor estructura, accesibilidad,
-diseño adaptable, modo oscuro y una presentación más profesional para información
-operativa y comunitaria.
+Somos la Dirección de Seguridad Pública y Comunitaria de Quilicura. Coordinamos prevención, atención a víctimas y acciones comunitarias, apoyados por una estrategia tecnológica que incluye más de 1.000 cámaras y drones para proteger a las vecinas y vecinos.[web:10][web:13]
 </p>
 <div class="btns">
-<a class="btn btn-primary" href="#contacto">Ver contactos</a>
-<a class="btn btn-secondary" href="#programas">Explorar programas</a>
+<a class="btn btn-primary" href="#queencontraras">Qué encontrarás aquí</a>
+<a class="btn btn-secondary" href="#contacto">Contactos de emergencia</a>
 </div>
 </div>
 
 <aside class="card hero-card">
-<div class="hotline">
-<span>Central de llamados de emergencia</span>
+<div class="emergency-block">
 <strong>1485</strong>
-<p>Atención operativa las 24 horas, todos los días.</p>
+<span>Central de emergencias 24/7</span>
+<p>Atención operativa permanente para toda la comuna.</p>
 </div>
 </aside>
 </div>
 </header>
 
-<section>
+<section id="mision">
 <div class="container">
-<h2 class="section-title">Ejes de trabajo</h2>
-<p class="muted">
-Contenido reorganizado para una lectura más simple y un sitio listo para visualización actual.
+<h2 class="section-title">Nuestra Misión</h2>
+<p>
+Nuestra misión es garantizar la seguridad y dignidad de las personas de Quilicura a través de medidas preventivas, atención especializada a víctimas, fortalecimiento de redes comunitarias y gestión tecnológica estratégica. Trabajamos para reducir la violencia, mejorar la convivencia y coordinar respuestas eficaces con las instituciones públicas y la ciudadanía.[web:11][web:14]
 </p>
-<div class="cards">
-<article class="card">
-<h3>Disuasión del delito</h3>
-<p class="muted">Patrullaje preventivo y apoyo operativo en terreno.</p>
-</article>
-<article class="card">
-<h3>Articulación territorial</h3>
-<p class="muted">Trabajo con barrios y organizaciones comunitarias.</p>
-</article>
-<article class="card">
-<h3>Atención a víctimas</h3>
-<p class="muted">Orientación psicosocial y activación de redes de apoyo.</p>
-</article>
-<article class="card">
-<h3>Delegación sector sur</h3>
-<p class="muted">Acercamiento de servicios municipales y presencia territorial.</p>
-</article>
+<div class="btns" style="justify-content: center;">
+<a class="btn btn-primary" href="#queencontraras">Explorar servicios</a>
+</div>
+</div>
+</section>
+
+<section id="queencontraras">
+<div class="container">
+<h2 class="section-title">Qué encontrarás aquí</h2>
+<p class="muted">
+En esta página encontrarás información rápida sobre emergencias, servicios municipales de seguridad, logros y resultados del periodo 2022–2025, y las vías para denunciar o sumarte a las redes de prevención de tu barrio.[web:12][web:13]
+</p>
+
+<div class="features-grid">
+<div class="card">
+<h3>Emergencias</h3>
+<ul class="feature-list">
+<li>Números prioritarios: 1485 (24/7), Denuncia Seguro</li>
+<li>Cómo usarlos y respuesta inmediata</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Servicios</h3>
+<ul class="feature-list">
+<li>Prevención del delito y seguridad vial</li>
+<li>Atención a víctimas y protección infantil</li>
+<li>Control de incivilidades</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Resultados 2022-2025</h3>
+<ul class="feature-list">
+<li>92 acciones estratégicas (cumplimiento 85-90%)</li>
+<li>Reducción de delitos y despliegue tecnológico</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Participación</h3>
+<ul class="feature-list">
+<li>Redes vecinales y mesas barriales</li>
+<li>Cómo sumarte a la prevención comunitaria</li>
+<li>Transparencia: informes y presupuesto</li>
+</ul>
+</div>
 </div>
 </div>
 </section>
 
 <section id="territorio">
 <div class="container">
-<h2 class="section-title">Cobertura territorial</h2>
-<p class="muted">
-Se mantuvieron los datos del sitio original, con mejor jerarquía visual y lectura móvil.
-</p>
+<h2 class="section-title">Cobertura tecnológica</h2>
+<p class="muted">Monitoreo con más de 1.000 cámaras, drones y central operativa 24/7.</p>
 
-<div class="stats">
+<div class="stats-grid">
 <div class="card">
-<div class="metric">830</div>
-<p class="muted">Cámaras de vigilancia</p>
+<div class="metric">1.000+</div>
+<p>Cámaras de vigilancia</p>
 </div>
 <div class="card">
 <div class="metric">03</div>
-<p class="muted">Drones activos</p>
+<p>Drones activos</p>
 </div>
 <div class="card">
 <div class="metric">15</div>
-<p class="muted">Monopostes</p>
+<p>Monopostes</p>
 </div>
 <div class="card">
 <div class="metric">05</div>
-<p class="muted">Motocicletas</p>
+<p>Motocicletas</p>
 </div>
 </div>
 </div>
@@ -511,55 +408,30 @@ Se mantuvieron los datos del sitio original, con mejor jerarquía visual y lectu
 <section id="programas">
 <div class="container">
 <h2 class="section-title">Programas y convenios</h2>
-<p class="muted">
-Oferta programática ordenada en bloques más claros y una tabla más útil.
-</p>
 
-<div class="programs">
+<div class="programs-grid">
 <article class="card">
 <h3>Programa Lazos</h3>
-<p class="muted">
-Apoyo confidencial a familias, niños, niñas y adolescentes, con atención diferenciada.
-</p>
-<p>
-<strong>Ubicación:</strong> Del Sembrador Nº530<br>
-<strong>Contacto:</strong> 56 9 8123 3915 / 56 9 9481 0652
-</p>
+<p>Apoyo confidencial a familias, niños, niñas y adolescentes, con atención diferenciada.</p>
+<p><strong>Ubicación:</strong> Del Sembrador Nº530<br><strong>Contacto:</strong> 56 9 8123 3915 / 56 9 9481 0652</p>
 </article>
 
 <article class="card">
 <h3>Dispositivos de intervención</h3>
-<p class="muted">
-Detección temprana, parentalidad positiva y terapia multisistémica.
-</p>
+<p>Detección temprana, parentalidad positiva y terapia multisistémica.</p>
 </article>
 </div>
 
-<div class="table-wrap" style="margin-top:1rem;">
+<div class="table-wrap">
 <table>
 <thead>
-<tr>
-<th>Programa</th>
-<th>Tipo de apoyo</th>
-</tr>
+<tr><th>Programa</th><th>Tipo de apoyo</th></tr>
 </thead>
 <tbody>
-<tr>
-<td>Senda Previene</td>
-<td>Prevención y acompañamiento</td>
-</tr>
-<tr>
-<td>Centro de las Mujeres</td>
-<td>Atención integral especializada</td>
-</tr>
-<tr>
-<td>Programa Lazos</td>
-<td>Intervención familiar</td>
-</tr>
-<tr>
-<td>Somos Barrio</td>
-<td>Fortalecimiento comunitario</td>
-</tr>
+<tr><td>Senda Previene</td><td>Prevención y acompañamiento</td></tr>
+<tr><td>Centro de las Mujeres</td><td>Atención integral especializada</td></tr>
+<tr><td>Programa Lazos</td><td>Intervención familiar</td></tr>
+<tr><td>Somos Barrio</td><td>Fortalecimiento comunitario</td></tr>
 </tbody>
 </table>
 </div>
@@ -568,16 +440,13 @@ Detección temprana, parentalidad positiva y terapia multisistémica.
 
 <section>
 <div class="container">
-<h2 class="section-title">Galería institucional</h2>
-<p class="muted">
-Estas imágenes deben ir dentro de la carpeta <strong>img</strong> del repositorio.
-</p>
+<h2 class="section-title">Galería</h2>
 <div class="gallery">
-<img src=Camioneta_1.JPG alt="Camioneta de seguridad municipal">
-<img src=Camioneta_2.JPG alt="Vehículo de seguridad municipal">
-<img src=Camara_1.jpg alt="Cámara de vigilancia">
-<img src=Drone.JPG alt="Dron de seguridad pública">
-<img src=Monoposte.png alt="Monoposte de vigilancia">
+<img src="Camioneta_1.JPG" alt="Camioneta de seguridad municipal">
+<img src="Camioneta_2.JPG" alt="Vehículo de seguridad municipal">
+<img src="Camara_1.jpg" alt="Cámara de vigilancia">
+<img src="Drone.JPG" alt="Dron de seguridad pública">
+<img src="Monoposte.png" alt="Monoposte de vigilancia">
 </div>
 </div>
 </section>
@@ -586,71 +455,59 @@ Estas imágenes deben ir dentro de la carpeta <strong>img</strong> del repositor
 <div class="container">
 <h2 class="section-title">Video institucional</h2>
 <div class="video-frame">
-<iframe
-src="https://www.youtube.com/embed/vMKnrVL0ly8"
-title="Video institucional de seguridad pública"
-allowfullscreen
-loading="lazy">
-</iframe>
+<iframe src="https://www.youtube.com/embed/vMKnrVL0ly8" title="Video institucional Seguridad Pública Quilicura" allowfullscreen loading="lazy"></iframe>
 </div>
 </div>
 </section>
 
-<section id="atencion">
+<section id="atencion" class="contact-grid">
 <div class="container">
-<h2 class="section-title">Atención y orientación</h2>
+<h2 class="section-title">Puntos de atención</h2>
 <div class="contact-grid">
 <article class="card">
 <h3>Articulación Territorial</h3>
-<p>
-Ignacio Serrano Nº557<br>
-articulacionterritorial.seguridad@quilicura.cl
-</p>
+<p>Ignacio Serrano Nº557<br>articulacionterritorial.seguridad@quilicura.cl</p>
 </article>
 
 <article class="card">
 <h3>Centro de Atención a Víctimas</h3>
-<p>
-Ignacio Serrano Nº557<br>
-WhatsApp: 56 9 3283 8516<br>
-Teléfono: 2 3384 2092
-</p>
+<p>Ignacio Serrano Nº557<br>WhatsApp: 56 9 3283 8516<br>Teléfono: 2 3384 2092</p>
 </article>
 
 <article class="card">
 <h3>Delegación Sector Sur</h3>
-<p>
-Camino del Cerro Nº1676<br>
-Teléfono: 2 2944 4739
-</p>
+<p>Camino del Cerro Nº1676<br>Teléfono: 2 2944 4739</p>
 </article>
 </div>
 </div>
 </section>
+</main>
 
 <footer id="contacto">
 <div class="container">
-<p class="muted">Versión mejorada lista para revisar, adaptar y publicar en GitHub Pages.</p>
+<p class="muted" style="text-align: center; margin-bottom: var(--space-4);">Dirección de Seguridad Pública y Comunitaria - Municipalidad de Quilicura<br>Versión profesional optimizada para accesibilidad y móviles.</p>
 
 <div class="footer-logo-wrap">
-<img src=PIE_1.jpeg alt="Imagen institucional de pie de página" class="footer-logo">
+<img src="PIE_1.jpeg" alt="Logo institucional Municipalidad de Quilicura" class="footer-logo">
 </div>
 </div>
 </footer>
-</main>
 
 <script>
-(function(){
-const t = document.querySelector('[data-theme-toggle]');
-const r = document.documentElement;
-let d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-r.setAttribute('data-theme', d);
+(() => {
+const toggle = document.querySelector('[data-theme-toggle]');
+const root = document.documentElement;
+let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+root.setAttribute('data-theme', theme);
+localStorage.setItem('theme', theme);
 
-t && t.addEventListener('click', () => {
-d = d === 'dark' ? 'light' : 'dark';
-r.setAttribute('data-theme', d);
+toggle?.addEventListener('click', () => {
+theme = theme === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', theme);
+localStorage.setItem('theme', theme);
 });
 })();
 </script>
+
 </body>
 </html>
