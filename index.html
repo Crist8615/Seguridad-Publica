@@ -1,513 +1,888 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dirección de Seguridad Pública y Comunitaria de Quilicura. Información sobre emergencias, programas, resultados y participación ciudadana.">
-<title>Dirección de Seguridad Pública y Comunitaria - Quilicura</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dirección de Seguridad Pública y Comunitaria de Quilicura. Emergencias 1485 24/7, programas, denuncias, resultados 2022–2025 y participación vecinal.">
+  <title>Seguridad Pública Quilicura | Municipalidad de Quilicura</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-:root,
-[data-theme="light"]{
---text-xs: clamp(.75rem,.7rem + .25vw,.875rem);
---text-sm: clamp(.875rem,.8rem + .35vw,1rem);
---text-base: clamp(1rem,.95rem + .25vw,1.125rem);
---text-lg: clamp(1.125rem,1rem + .75vw,1.5rem);
---text-xl: clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
---text-2xl: clamp(2rem,1.8rem + 2.5vw,3.5rem);
---text-3xl: clamp(2.5rem,2rem + 3vw,4rem);
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background: #f9fafb; color: #111827; line-height: 1.7; }
 
---space-2: .5rem;
---space-4: 1rem;
---space-6: 1.5rem;
---space-8: 2rem;
---space-12: 3rem;
---space-16: 4rem;
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
 
---radius-md: .75rem;
---radius-lg: 1rem;
---radius-xl: 1.5rem;
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .section { padding: 4rem 0; }
 
---content: 1200px;
+    /* Barra informativa superior */
+    .alert-bar {
+      background: #0f172a;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      padding: 0.55rem 0;
+    }
+    .alert-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .alert-pill {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(248,250,252,0.08);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
 
---font-body: 'Instrument Sans', system-ui, sans-serif;
---font-display: 'Montserrat', system-ui, sans-serif;
+    /* Topbar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 2px 10px rgba(15,23,42,0.05);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #c20064;
+    }
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 0.25rem;
+      box-shadow: 0 6px 16px rgba(15,23,42,0.15);
+      object-fit: contain;
+    }
 
---color-bg: #f8f9fa;
---color-surface: #ffffff;
---color-surface-2: #f5f7fa;
---color-border: #e0e6ed;
---color-text: #1a202c;
---color-text-muted: #4a5568;
---color-primary: #c20064;
---color-secondary: #2d3748;
---color-highlight: #f0e800;
---color-success: #38a169;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #6b7280;
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg,#c20064,#1d4ed8);
+      transition: width 0.2s ease;
+    }
+    nav a:hover { color: #111827; }
+    nav a:hover::after { width: 100%; }
 
---shadow-sm: 0 1px 3px rgb(0 0 0 / 0.1);
---shadow-md: 0 4px 20px rgb(0 0 0 / 0.12);
---shadow-lg: 0 10px 40px rgb(0 0 0 / 0.15);
-}
+    /* Hero */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at top left,#c20064 0,#1d4ed8 45%,#020617 100%);
+      color: white;
+      padding: 4.5rem 0 3.5rem;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 20%,rgba(255,255,255,0.16),transparent 55%),
+                        radial-gradient(circle at 80% 0,rgba(255,255,255,0.12),transparent 50%),
+                        radial-gradient(circle at 0 100%,rgba(56,189,248,0.15),transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.3);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+    .hero-kicker span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34,197,94,0.9);
+    }
+    .hero-title {
+      font-size: clamp(2.4rem,5vw,3.6rem);
+      line-height: 1.05;
+      margin: 1rem 0 0.75rem;
+      font-weight: 800;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      max-width: 34rem;
+      color: rgba(249,250,251,0.9);
+      margin-bottom: 1.2rem;
+    }
+    .hero-mission {
+      font-size: 0.95rem;
+      max-width: 34rem;
+      color: rgba(226,232,240,0.9);
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+    .hero-tag {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      background: rgba(15,23,42,0.5);
+      border: 1px solid rgba(148,163,184,0.5);
+    }
 
-[data-theme="dark"]{
---color-bg: #0f1419;
---color-surface: #1a202c;
---color-surface-2: #2d3748;
---color-border: #4a5568;
---color-text: #e2e8f0;
---color-text-muted: #a0aec0;
---color-primary: #e53e3e;
---color-secondary: #63b3ed;
---color-highlight: #ffe85d;
---color-success: #48bb78;
-}
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.2rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg,#fbbf24,#f97316);
+      color: #111827;
+      box-shadow: 0 12px 35px rgba(15,23,42,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(15,23,42,0.45); }
+    .btn-secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.6);
+    }
+    .btn-secondary:hover { background: rgba(15,23,42,0.5); }
 
-* { box-sizing: border-box; }
+    .hero-emergency-card {
+      background: radial-gradient(circle at top,#f97316 0,#b91c1c 45%,#7f1d1d 100%);
+      padding: 2rem;
+      border-radius: 22px;
+      box-shadow: 0 22px 55px rgba(15,23,42,0.6);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-emergency-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 220deg,rgba(254,249,195,0.22),transparent 35%,rgba(254,249,195,0.25),transparent 70%);
+      opacity: 0.7;
+      mix-blend-mode: screen;
+    }
+    .hero-emergency-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-emergency-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(254,249,195,0.95);
+      margin-bottom: 0.8rem;
+    }
+    .hero-emergency-number {
+      font-size: 3.5rem;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+    .hero-emergency-text {
+      margin-top: 0.6rem;
+      color: rgba(254,249,195,0.95);
+      font-size: 0.95rem;
+    }
+    .hero-emergency-badge {
+      display: inline-flex;
+      margin-top: 1rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.6);
+      backdrop-filter: blur(8px);
+      font-size: 0.8rem;
+      gap: 0.35rem;
+      align-items: center;
+    }
+    .hero-emergency-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34,197,94,0.9);
+    }
 
-html { scroll-behavior: smooth; }
+    /* Accesos rápidos */
+    .quick-section {
+      background: #0b1120;
+      color: #e5e7eb;
+      padding: 2.5rem 0;
+    }
+    .quick-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+    }
+    .quick-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .quick-sub {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 1.25rem;
+    }
+    .quick-card {
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+    }
+    .quick-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+    .quick-main {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .quick-extra {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+    }
+    .quick-link {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: #f97316;
+      font-weight: 600;
+    }
 
-body {
-margin: 0;
-font-family: var(--font-body);
-font-size: var(--text-base);
-line-height: 1.7;
-color: var(--color-text);
-background: var(--color-bg);
-}
+    .section-title {
+      font-size: clamp(2rem,3vw,2.6rem);
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      background: linear-gradient(135deg,#c20064,#1d4ed8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .section-subtitle {
+      text-align: center;
+      max-width: 40rem;
+      margin: 0 auto 2.5rem;
+      color: #6b7280;
+      font-size: 0.98rem;
+    }
 
-img { display: block; max-width: 100%; height: auto; }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .news-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.6rem 1.7rem;
+      box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(15,23,42,0.1); }
+    .news-date { font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .news-title { font-weight: 700; margin-bottom: 0.45rem; font-size: 1.03rem; color: #111827; }
+    .news-text { font-size: 0.92rem; color: #4b5563; }
 
-a { text-decoration: none; color: inherit; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .feature-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.75rem 1.8rem;
+      box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+      border-top: 4px solid #c20064;
+      border-inline: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .feature-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .feature-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature-text { font-size: 0.92rem; color: #4b5563; }
+    .feature-list { margin-top: 0.7rem; font-size: 0.9rem; color: #4b5563; }
 
-.container { width: min(calc(100% - 2rem), var(--content)); margin: auto; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .stat-card {
+      background: radial-gradient(circle at top,#f9fafb 0,#e5e7eb 40%,#d1d5db 100%);
+      border-radius: 18px;
+      padding: 1.7rem 1.8rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 1px rgba(148,163,184,0.4);
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 0.25rem;
+    }
+    .stat-label { font-size: 0.9rem; color: #4b5563; }
 
-.topbar {
-position: sticky; top: 0; z-index: 1000;
-backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--color-border);
-}
+    .neighbors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .neighbor-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.8rem 1.9rem;
+      box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+      border: 1px solid #e5e7eb;
+    }
+    .neighbor-title { font-weight: 700; margin-bottom: 0.4rem; }
+    .neighbor-text { font-size: 0.92rem; color: #4b5563; }
 
-[data-theme="dark"] .topbar { background: rgba(26,32,44,0.9); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .gallery-img {
+      height: 220px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.16);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .gallery-img:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 22px 60px rgba(15,23,42,0.25); }
 
-.topbar-inner {
-display: flex; justify-content: space-between; align-items: center;
-padding: var(--space-4) 0; gap: var(--space-4);
-}
+    .video-frame {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 55px rgba(15,23,42,0.35);
+      border: 1px solid #0f172a;
+      background: #020617;
+      aspect-ratio: 16/9;
+    }
+    .video-frame iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+    }
 
-.brand {
-display: flex; align-items: center; gap: 1rem;
-font-family: var(--font-display); font-weight: 800; font-size: var(--text-lg);
-}
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .contact-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.8rem 1.9rem;
+      box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+      border: 1px solid #e5e7eb;
+    }
+    .contact-title { font-weight: 700; margin-bottom: 0.35rem; }
+    .contact-text { font-size: 0.95rem; color: #4b5563; }
 
-.logo-principal {
-width: 64px; height: 64px; object-fit: contain;
-border-radius: var(--radius-md); background: var(--color-surface);
-padding: 0.25rem; box-shadow: var(--shadow-md);
-}
+    /* Redes sociales */
+    .social-section {
+      background: #020617;
+      color: #e5e7eb;
+      padding: 3rem 0;
+    }
+    .social-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .social-text {
+      max-width: 420px;
+    }
+    .social-text h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .social-text p {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .social-pill {
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      background: rgba(15,23,42,0.8);
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .social-pill:hover {
+      background: rgba(30,64,175,0.9);
+      transform: translateY(-1px);
+    }
 
-header, section, footer { padding: clamp(3rem, 6vw, 5rem) 0; }
+    footer {
+      padding: 2.5rem 0 3.5rem;
+      background: #020617;
+      color: #e5e7eb;
+      text-align: center;
+    }
+    .footer-logo {
+      max-width: 260px;
+      margin: 1.2rem auto 0;
+    }
+    .footer-social-row {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .footer-social-row a {
+      color: #e5e7eb;
+      text-decoration: underline;
+      text-decoration-color: rgba(249,115,22,0.7);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
 
-.hero-grid { display: grid; grid-template-columns: 1fr 0.8fr; gap: var(--space-8); align-items: start; }
+    @media (max-width: 900px) {
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-wrap: wrap; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.5rem; }
+      .social-inner { flex-direction: column; align-items: flex-start; }
+    }
 
-.programs-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); }
-
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); }
-
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); }
-
-.eyebrow {
-display: inline-flex; align-items: center; gap: 0.5rem;
-padding: 0.5rem 1rem; border-radius: 999px;
-background: rgba(194,0,100,0.1); color: var(--color-primary);
-font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.05em;
-}
-
-.hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.1; margin: var(--space-2) 0 var(--space-4); }
-
-.section-title {
-font-family: var(--font-display); font-size: var(--text-2xl);
-margin-bottom: var(--space-4); color: var(--color-text);
-}
-
-.muted { color: var(--color-text-muted); }
-
-.btns { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); }
-
-.btn {
-display: inline-flex; align-items: center; justify-content: center;
-min-height: 52px; padding: 1rem 1.5rem; border-radius: 999px;
-font-weight: 700; font-size: var(--text-sm); transition: all 0.2s ease;
-text-decoration: none;
-}
-
-.btn-primary {
-background: linear-gradient(135deg, var(--color-primary), #a80052);
-color: white; box-shadow: var(--shadow-sm);
-}
-
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-
-.btn-secondary {
-background: var(--color-surface); color: var(--color-text);
-border: 2px solid var(--color-border);
-}
-
-.btn-secondary:hover { background: var(--color-primary); color: white; border-color: var(--color-primary); }
-
-.card {
-background: var(--color-surface); border: 1px solid var(--color-border);
-border-radius: var(--radius-xl); padding: var(--space-6);
-box-shadow: var(--shadow-sm); transition: all 0.3s ease;
-}
-
-.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-
-.hero-card { border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-lg); }
-
-.hotline {
-display: grid; gap: var(--space-2);
-background: linear-gradient(135deg, var(--color-secondary), #4a5568);
-color: white; border-radius: var(--radius-xl); padding: var(--space-6);
-text-align: center;
-}
-
-.hotline strong {
-font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1;
-background: var(--color-highlight); color: var(--color-secondary);
-padding: 0.5rem 1.5rem; border-radius: 999px; width: max-content; margin: auto;
-}
-
-.metric {
-font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 3.5rem);
-line-height: 1; color: var(--color-primary); font-weight: 800;
-}
-
-.emergency-block {
-background: linear-gradient(135deg, var(--color-success), #2f855a);
-color: white; border-radius: var(--radius-xl); padding: var(--space-8);
-text-align: center; box-shadow: var(--shadow-lg);
-}
-
-.emergency-block strong { font-size: clamp(3rem, 10vw, 5rem); display: block; margin: var(--space-4) 0; }
-
-.feature-list {
-list-style: none; padding: 0; margin: var(--space-6) 0 0;
-}
-
-.feature-list li {
-display: flex; align-items: flex-start; gap: var(--space-4);
-margin-bottom: var(--space-4); padding: var(--space-2);
-background: var(--color-surface-2); border-radius: var(--radius-md);
-border-left: 4px solid var(--color-primary);
-}
-
-.feature-list li::before {
-content: "✓"; color: var(--color-success); font-weight: 800; font-size: var(--text-lg);
-flex-shrink: 0; margin-top: 0.2rem;
-}
-
-.table-wrap {
-overflow-x: auto; background: var(--color-surface);
-border: 1px solid var(--color-border); border-radius: var(--radius-xl);
-margin-top: var(--space-6);
-}
-
-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
-
-th, td { padding: 1.2rem; text-align: left; border-bottom: 1px solid var(--color-border); }
-
-th { background: var(--color-surface-2); font-weight: 700; color: var(--color-secondary); }
-
-.gallery {
-display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: var(--space-4);
-}
-
-.gallery img {
-height: 200px; object-fit: cover; border-radius: var(--radius-lg);
-border: 1px solid var(--color-border); transition: transform 0.3s ease;
-}
-
-.gallery img:hover { transform: scale(1.05); }
-
-.video-frame {
-position: relative; padding-bottom: 56.25%; height: 0;
-border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border);
-box-shadow: var(--shadow-lg); background: var(--color-surface-2);
-}
-
-.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-.footer-logo-wrap { margin-top: var(--space-6); text-align: center; }
-
-.footer-logo { max-width: 300px; margin: auto; }
-
-nav ul {
-display: flex; flex-wrap: wrap; gap: 0.25rem; list-style: none; padding: 0; margin: 0;
-}
-
-nav a, .theme-toggle {
-color: var(--color-text-muted); padding: 0.75rem 1.25rem;
-border-radius: 999px; border: 1px solid transparent;
-transition: all 0.2s ease; font-weight: 600;
-}
-
-nav a:hover, .theme-toggle:hover {
-background: var(--color-surface-2); color: var(--color-text); border-color: var(--color-border);
-}
-
-@media (max-width: 980px) {
-.hero-grid { grid-template-columns: 1fr; text-align: center; gap: var(--space-6); }
-.programs-grid, .contact-grid, .stats-grid, .features-grid { grid-template-columns: 1fr; }
-nav ul { display: none; }
-}
-
-@media (max-width: 640px) {
-.btns, .topbar-inner { flex-direction: column; align-items: stretch; }
-.brand { justify-content: center; }
-}
-</style>
+    @media (max-width: 640px) {
+      .section { padding: 3rem 0; }
+      .hero-emergency-number { font-size: 3rem; }
+      .news-card, .feature-card, .neighbor-card, .contact-card { padding: 1.4rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="topbar">
-<div class="container topbar-inner">
-<a class="brand" href="#inicio" aria-label="Inicio">
-<img src="quilicura_1.jpeg" alt="Logo Dirección de Seguridad Pública y Comunitaria Quilicura" class="logo-principal">
-<span>Seguridad Pública Quilicura</span>
-</a>
+  <div class="alert-bar">
+    <div class="container alert-inner">
+      <span class="alert-pill">Información importante</span>
+      <span>Ante una situación crítica, prioriza siempre los canales de emergencia nacionales y municipales.</span>
+    </div>
+  </div>
 
-<nav aria-label="Navegación principal">
-<ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#mision">Misión</a></li>
-<li><a href="#queencontraras">Qué encontrarás</a></li>
-<li><a href="#programas">Programas</a></li>
-<li><a href="#territorio">Territorio</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-</nav>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="brand" aria-label="Inicio Seguridad Pública Quilicura">
+        <img src="quilicura_1.jpeg" alt="Logo Seguridad Pública Quilicura" class="brand-logo">
+        <span>Seguridad Pública Quilicura</span>
+      </a>
+    <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#noticias">Al día</a></li>
+          <li><a href="#queencontraras">Servicios</a></li>
+          <li><a href="#estadisticas">Tecnología</a></li>
+          <li><a href="#vecinos">Vecinos seguros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema (claro/oscuro)">◐</button>
-</div>
-</div>
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-kicker"><span></span>Seguridad integrada para Quilicura</div>
+          <h1 class="hero-title">Dirección de Seguridad Pública y Comunitaria</h1>
+          <p class="hero-subtitle">Seguridad integrada para Quilicura — prevención, atención y participación ciudadana.</p>
+          <p class="hero-mission">
+            Nuestra misión es proteger a la comunidad de Quilicura mediante políticas integradas de prevención, respuesta a víctimas y participación ciudadana,
+            con enfoque de género y uso responsable de tecnologías.
+          </p>
+          <div class="hero-tags">
+            <span class="hero-tag">Prevención del delito</span>
+            <span class="hero-tag">Atención a víctimas</span>
+            <span class="hero-tag">Televigilancia y drones</span>
+            <span class="hero-tag">Participación vecinal</span>
+          </div>
+          <div class="hero-cta-row">
+            <a href="#contacto" class="btn btn-primary">Ver números de emergencia</a>
+            <a href="#queencontraras" class="btn btn-secondary">Explorar servicios y programas</a>
+          </div>
+        </div>
+        <aside class="hero-emergency-card">
+          <div class="hero-emergency-inner">
+            <div class="hero-emergency-label">Central de emergencias</div>
+            <div class="hero-emergency-number">1485</div>
+            <p class="hero-emergency-text">Atención operativa 24/7 para toda la comuna de Quilicura.</p>
+            <div class="hero-emergency-badge">
+              <span class="hero-emergency-badge-dot"></span>
+              <span>Coordinación con Carabineros, Bomberos y salud.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<main>
-<header class="hero" id="inicio">
-<div class="container hero-grid">
-<div>
-<span class="eyebrow">Seguridad integrada para Quilicura</span>
-<h1>Dirección de Seguridad Pública y Comunitaria</h1>
-<p>Seguridad integrada para Quilicura — prevención, atención y participación ciudadana.</p>
-<p class="muted">
-Somos la Dirección de Seguridad Pública y Comunitaria de Quilicura. Coordinamos prevención, atención a víctimas y acciones comunitarias, apoyados por una estrategia tecnológica que incluye más de 1.000 cámaras y drones para proteger a las vecinas y vecinos.[web:10][web:13]
-</p>
-<div class="btns">
-<a class="btn btn-primary" href="#queencontraras">Qué encontrarás aquí</a>
-<a class="btn btn-secondary" href="#contacto">Contactos de emergencia</a>
-</div>
-</div>
+    <!-- ACCESOS RÁPIDOS -->
+    <section class="quick-section">
+      <div class="container">
+        <div class="quick-header">
+          <div class="quick-title">Accesos rápidos de seguridad</div>
+          <div class="quick-sub">Llamadas y enlaces prioritarios para actuar a tiempo.</div>
+        </div>
+        <div class="quick-grid">
+          <div class="quick-card">
+            <div class="quick-label">Central municipal</div>
+            <div class="quick-main">1485</div>
+            <div class="quick-extra">Emergencias y coordinación 24/7 en Quilicura.</div>
+          </div>
+          <a class="quick-card" href="https://www.denunciaseguro.cl" target="_blank" rel="noopener noreferrer">
+            <div class="quick-label">Denuncia anónima</div>
+            <div class="quick-main">Denuncia Seguro *4242</div>
+            <div class="quick-extra">Línea nacional anónima para informar delitos y tráfico de drogas.</div>
+            <div class="quick-link">Ir a denuncias en línea</div>
+          </a>
+          <a class="quick-card" href="#contacto">
+            <div class="quick-label">Víctimas</div>
+            <div class="quick-main">WhatsApp 56 9 3283 8516</div>
+            <div class="quick-extra">Centro de Atención a Víctimas para orientación psicosocial.</div>
+            <div class="quick-link">Ver datos de atención</div>
+          </a>
+          <a class="quick-card" href="#estadisticas">
+            <div class="quick-label">Tecnología</div>
+            <div class="quick-main">Mapa de cámaras</div>
+            <div class="quick-extra">Conoce la magnitud del monitoreo con cámaras, drones y monopostes.</div>
+            <div class="quick-link">Ver despliegue tecnológico</div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<aside class="card hero-card">
-<div class="emergency-block">
-<strong>1485</strong>
-<span>Central de emergencias 24/7</span>
-<p>Atención operativa permanente para toda la comuna.</p>
-</div>
-</aside>
-</div>
-</header>
+    <!-- NOTICIAS / AL DÍA -->
+    <section id="noticias" class="section">
+      <div class="container">
+        <h2 class="section-title">Seguridad Quilicura al día</h2>
+        <p class="section-subtitle">
+          Información reciente sobre operativos, campañas preventivas y acciones coordinadas en tu barrio.
+        </p>
+        <div class="news-grid">
+          <article class="news-card">
+            <p class="news-date">Abril 2026</p>
+            <h3 class="news-title">Refuerzo de patrullajes mixtos en barrios residenciales</h3>
+            <p class="news-text">Coordinación entre Seguridad Municipal, Carabineros y redes vecinales para aumentar la presencia preventiva en horarios de mayor flujo.</p>
+          </article>
+          <article class="news-card">
+            <p class="news-date">Abril 2026</p>
+            <h3 class="news-title">Actualización de cámaras y monitoreo en puntos críticos</h3>
+            <p class="news-text">Modernización del sistema de televigilancia y ampliación de cobertura con más de 1.000 cámaras y drones activos en la comuna.</p>
+          </article>
+          <article class="news-card">
+            <p class="news-date">Marzo 2026</p>
+            <h3 class="news-title">Talleres de prevención y autocuidado en juntas de vecinos</h3>
+            <p class="news-text">Capacitaciones gratuitas para vecinas y vecinos sobre denuncias, convivencia y cuidado de espacios públicos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="mision">
-<div class="container">
-<h2 class="section-title">Nuestra Misión</h2>
-<p>
-Nuestra misión es garantizar la seguridad y dignidad de las personas de Quilicura a través de medidas preventivas, atención especializada a víctimas, fortalecimiento de redes comunitarias y gestión tecnológica estratégica. Trabajamos para reducir la violencia, mejorar la convivencia y coordinar respuestas eficaces con las instituciones públicas y la ciudadanía.[web:11][web:14]
-</p>
-<div class="btns" style="justify-content: center;">
-<a class="btn btn-primary" href="#queencontraras">Explorar servicios</a>
-</div>
-</div>
-</section>
+    <!-- QUÉ ENCONTRARÁS AQUÍ -->
+    <section id="queencontraras" class="section">
+      <div class="container">
+        <h2 class="section-title">Qué encontrarás aquí</h2>
+        <p class="section-subtitle">
+          Información rápida sobre emergencias, servicios municipales de seguridad, resultados del periodo 2022–2025 y vías para denunciar o sumarte a las redes de prevención de tu barrio.
+        </p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">📞</div>
+            <h3 class="feature-title">Emergencias y atención inmediata</h3>
+            <p class="feature-text">Números prioritarios y recomendaciones para usarlos de forma segura.</p>
+            <p class="feature-list">Central 1485 (24/7) y canales coordinados con instituciones.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3 class="feature-title">Servicios y programas</h3>
+            <p class="feature-text">Prevención del delito, atención a víctimas, protección de infancia y adolescencia.</p>
+            <p class="feature-list">Programa Lazos, Senda Previene, Centro de las Mujeres, Somos Barrio, seguridad vial y control de incivilidades.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📢</div>
+            <h3 class="feature-title">Denuncias y orientación</h3>
+            <p class="feature-text">Cómo denunciar y canalizar casos de forma segura y confidencial.</p>
+            <p class="feature-list">Denuncia Seguro (*4242 y web), contactos municipales y orientación psicosocial.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">Resultados 2022–2025</h3>
+            <p class="feature-text">Acciones implementadas, avances y logros en seguridad comunitaria.</p>
+            <p class="feature-list">92 acciones estratégicas, cumplimiento 85–90%, despliegue tecnológico y patrullajes mixtos.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🛰️</div>
+            <h3 class="feature-title">Mapas y recursos tecnológicos</h3>
+            <p class="feature-text">Monitoreo en línea y cobertura territorial.</p>
+            <p class="feature-list">1.000+ cámaras, drones activos, monopostes y central de televigilancia 24/7.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3 class="feature-title">Participación y transparencia</h3>
+            <p class="feature-text">Cómo sumarte y acceder a la información pública.</p>
+            <p class="feature-list">Redes vecinales, mesas barriales, presupuesto, informes e información pública.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="queencontraras">
-<div class="container">
-<h2 class="section-title">Qué encontrarás aquí</h2>
-<p class="muted">
-En esta página encontrarás información rápida sobre emergencias, servicios municipales de seguridad, logros y resultados del periodo 2022–2025, y las vías para denunciar o sumarte a las redes de prevención de tu barrio.
-</p>
+    <!-- TECNOLOGÍA / COBERTURA -->
+    <section id="estadisticas" class="section" style="background:#f3f4f6;">
+      <div class="container">
+        <h2 class="section-title">Tecnología y cobertura territorial</h2>
+        <p class="section-subtitle">Infraestructura de televigilancia, drones y patrullaje preventivo al servicio de la comunidad.</p>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-number">1.000+</div>
+            <p class="stat-label">Cámaras de vigilancia</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number">3</div>
+            <p class="stat-label">Drones activos</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number">15</div>
+            <p class="stat-label">Monopostes</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number">5</div>
+            <p class="stat-label">Motocicletas</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="features-grid">
-<div class="card">
-<h3>Emergencias</h3>
-<ul class="feature-list">
-<li>Números prioritarios: 1485 (24/7), Denuncia Seguro</li>
-<li>Cómo usarlos y respuesta inmediata</li>
-</ul>
-</div>
+    <!-- VECINOS SEGUROS -->
+    <section id="vecinos" class="section">
+      <div class="container">
+        <h2 class="section-title">Vecinos seguros</h2>
+        <p class="section-subtitle">Apoyos y acciones específicas para distintos grupos de la comunidad de Quilicura.</p>
+        <div class="neighbors-grid">
+          <article class="neighbor-card">
+            <h3 class="neighbor-title">Niñez y adolescencia</h3>
+            <p class="neighbor-text">Protección de derechos, prevención de vulneraciones y acompañamiento a familias mediante programas especializados como Lazos y Senda Previene.</p>
+          </article>
+          <article class="neighbor-card">
+            <h3 class="neighbor-title">Mujeres y disidencias</h3>
+            <p class="neighbor-text">Atención a víctimas de violencia de género, orientación psicosocial y derivación a redes de apoyo y protección.</p>
+          </article>
+          <article class="neighbor-card">
+            <h3 class="neighbor-title">Adulto mayor y comunidad</h3>
+            <p class="neighbor-text">Acciones de acompañamiento, prevención de estafas, cuidado del espacio público y articulación con redes vecinales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Servicios</h3>
-<ul class="feature-list">
-<li>Prevención del delito y seguridad vial</li>
-<li>Atención a víctimas y protección infantil</li>
-<li>Control de incivilidades</li>
-</ul>
-</div>
+    <!-- GALERÍA -->
+    <section class="section" style="background:#0f172a; color:#e5e7eb;">
+      <div class="container">
+        <h2 class="section-title" style="color:#e5e7eb; background:none;">Galería institucional</h2>
+        <p class="section-subtitle" style="color:#9ca3af;">Imágenes de vehículos, tecnología y despliegue territorial de Seguridad Pública Quilicura.</p>
+        <div class="gallery-grid">
+          <img src="Camioneta_1.JPG" alt="Camioneta de seguridad municipal" class="gallery-img">
+          <img src="Camioneta_2.JPG" alt="Vehículo de seguridad municipal" class="gallery-img">
+          <img src="Camara_1.jpg" alt="Cámara de vigilancia" class="gallery-img">
+          <img src="Drone.JPG" alt="Dron de seguridad pública" class="gallery-img">
+          <img src="Monoposte.png" alt="Monoposte de vigilancia" class="gallery-img">
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Resultados 2022-2025</h3>
-<ul class="feature-list">
-<li>92 acciones estratégicas (cumplimiento 85-90%)</li>
-<li>Reducción de delitos y despliegue tecnológico</li>
-</ul>
-</div>
+    <!-- VIDEO -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Video institucional</h2>
+        <p class="section-subtitle">Conoce más sobre el trabajo diario de la Dirección de Seguridad Pública y Comunitaria de Quilicura.</p>
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/vMKnrVL0ly8" title="Video institucional Seguridad Pública Quilicura" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Participación</h3>
-<ul class="feature-list">
-<li>Redes vecinales y mesas barriales</li>
-<li>Cómo sumarte a la prevención comunitaria</li>
-<li>Transparencia: informes y presupuesto</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+    <!-- CONTACTO -->
+    <section id="contacto" class="section" style="background:#f3f4f6;">
+      <div class="container">
+        <h2 class="section-title">Atención y contactos</h2>
+        <p class="section-subtitle">Lugares de atención, teléfonos y correos para orientación y coordinación en seguridad.</p>
+        <div class="contacts-grid">
+          <article class="contact-card">
+            <h3 class="contact-title">Articulación Territorial</h3>
+            <p class="contact-text">
+              Ignacio Serrano Nº557<br>
+              articulacionterritorial.seguridad@quilicura.cl
+            </p>
+          </article>
+          <article class="contact-card">
+            <h3 class="contact-title">Centro de Atención a Víctimas</h3>
+            <p class="contact-text">
+              Ignacio Serrano Nº557<br>
+              WhatsApp: 56 9 3283 8516<br>
+              Teléfono: 2 3384 2092
+            </p>
+          </article>
+          <article class="contact-card">
+            <h3 class="contact-title">Delegación Sector Sur</h3>
+            <p class="contact-text">
+              Camino del Cerro Nº1676<br>
+              Teléfono: 2 2944 4739
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="territorio">
-<div class="container">
-<h2 class="section-title">Cobertura tecnológica</h2>
-<p class="muted">Monitoreo con más de 1.000 cámaras, drones y central operativa 24/7.</p>
+    <!-- REDES SOCIALES -->
+    <section class="social-section">
+      <div class="container social-inner">
+        <div class="social-text">
+          <h3>Redes y canales oficiales</h3>
+          <p>Sigue los canales oficiales de la Municipalidad de Quilicura para conocer alertas, campañas y novedades en seguridad pública.</p>
+        </div>
+        <div class="social-links">
+          <!-- Reemplaza las URLs por las oficiales de la muni -->
+          <a class="social-pill" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <span>📘</span><span>Facebook Municipalidad</span>
+          </a>
+          <a class="social-pill" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <span>📷</span><span>Instagram Seguridad</span>
+          </a>
+          <a class="social-pill" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+            <span>▶</span><span>YouTube Institucional</span>
+          </a>
+          <a class="social-pill" href="https://x.com/" target="_blank" rel="noopener noreferrer">
+            <span>✕</span><span>Cuenta en X / Twitter</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<div class="stats-grid">
-<div class="card">
-<div class="metric">1.000+</div>
-<p>Cámaras de vigilancia</p>
-</div>
-<div class="card">
-<div class="metric">03</div>
-<p>Drones activos</p>
-</div>
-<div class="card">
-<div class="metric">15</div>
-<p>Monopostes</p>
-</div>
-<div class="card">
-<div class="metric">05</div>
-<p>Motocicletas</p>
-</div>
-</div>
-</div>
-</section>
+  <footer>
+    <div class="container">
+      <p>Dirección de Seguridad Pública y Comunitaria · Municipalidad de Quilicura</p>
+      <p style="font-size:0.85rem; color:#9ca3af; margin-top:0.4rem;">Sitio informativo para vecinas y vecinos. Ante una emergencia, usa los canales oficiales y la central 1485.</p>
 
-<section id="programas">
-<div class="container">
-<h2 class="section-title">Programas y convenios</h2>
+      <div class="footer-social-row">
+        <!-- De nuevo, reemplaza por las URLs reales -->
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <span>·</span>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <span>·</span>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
 
-<div class="programs-grid">
-<article class="card">
-<h3>Programa Lazos</h3>
-<p>Apoyo confidencial a familias, niños, niñas y adolescentes, con atención diferenciada.</p>
-<p><strong>Ubicación:</strong> Del Sembrador Nº530<br><strong>Contacto:</strong> 56 9 8123 3915 / 56 9 9481 0652</p>
-</article>
-
-<article class="card">
-<h3>Dispositivos de intervención</h3>
-<p>Detección temprana, parentalidad positiva y terapia multisistémica.</p>
-</article>
-</div>
-
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Programa</th><th>Tipo de apoyo</th></tr>
-</thead>
-<tbody>
-<tr><td>Senda Previene</td><td>Prevención y acompañamiento</td></tr>
-<tr><td>Centro de las Mujeres</td><td>Atención integral especializada</td></tr>
-<tr><td>Programa Lazos</td><td>Intervención familiar</td></tr>
-<tr><td>Somos Barrio</td><td>Fortalecimiento comunitario</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="section-title">Galería</h2>
-<div class="gallery">
-<img src="Camioneta_1.JPG" alt="Camioneta de seguridad municipal">
-<img src="Camioneta_2.JPG" alt="Vehículo de seguridad municipal">
-<img src="Camara_1.jpg" alt="Cámara de vigilancia">
-<img src="Drone.JPG" alt="Dron de seguridad pública">
-<img src="Monoposte.png" alt="Monoposte de vigilancia">
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="section-title">Video institucional</h2>
-<div class="video-frame">
-<iframe src="https://www.youtube.com/embed/vMKnrVL0ly8" title="Video institucional Seguridad Pública Quilicura" allowfullscreen loading="lazy"></iframe>
-</div>
-</div>
-</section>
-
-<section id="atencion" class="contact-grid">
-<div class="container">
-<h2 class="section-title">Puntos de atención</h2>
-<div class="contact-grid">
-<article class="card">
-<h3>Articulación Territorial</h3>
-<p>Ignacio Serrano Nº557<br>articulacionterritorial.seguridad@quilicura.cl</p>
-</article>
-
-<article class="card">
-<h3>Centro de Atención a Víctimas</h3>
-<p>Ignacio Serrano Nº557<br>WhatsApp: 56 9 3283 8516<br>Teléfono: 2 3384 2092</p>
-</article>
-
-<article class="card">
-<h3>Delegación Sector Sur</h3>
-<p>Camino del Cerro Nº1676<br>Teléfono: 2 2944 4739</p>
-</article>
-</div>
-</div>
-</section>
-</main>
-
-<footer id="contacto">
-<div class="container">
-<p class="muted" style="text-align: center; margin-bottom: var(--space-4);">Dirección de Seguridad Pública y Comunitaria - Municipalidad de Quilicura<br>Versión profesional optimizada para accesibilidad y móviles.</p>
-
-<div class="footer-logo-wrap">
-<img src="PIE_1.jpeg" alt="Logo institucional Municipalidad de Quilicura" class="footer-logo">
-</div>
-</div>
-</footer>
-
-<script>
-(() => {
-const toggle = document.querySelector('[data-theme-toggle]');
-const root = document.documentElement;
-let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-root.setAttribute('data-theme', theme);
-localStorage.setItem('theme', theme);
-
-toggle?.addEventListener('click', () => {
-theme = theme === 'dark' ? 'light' : 'dark';
-root.setAttribute('data-theme', theme);
-localStorage.setItem('theme', theme);
-});
-})();
-</script>
+      <img src="PIE_1.jpeg" alt="Imagen institucional Municipalidad de Quilicura" class="footer-logo">
+    </div>
+  </footer>
 
 </body>
 </html>
