@@ -875,8 +875,34 @@
         <!-- De nuevo, reemplaza por las URLs reales -->
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
         <span>·</span>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <span>·</span>
+        <div class="instagram-box">
+  <a href="https://www.instagram.com/muniquilicura/?hl=es-la" target="_blank" rel="noopener noreferrer" title="Instagram">
+    <img src="https://www.ww2.muniquilicura.cl/wp-content/uploads/2021/09/Instagram-Icon.png" alt="Instagram" class="instagram-img">
+  </a>
+</div>
+
+<style>
+  .instagram-box {
+    width: 120px;
+    display: inline-block;
+  }
+
+  .instagram-box a {
+    display: block;
+  }
+
+  .instagram-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  .instagram-box:hover .instagram-img {
+    transform: scale(1.06);
+    opacity: .9;
+  }
+</style>
         <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
    
