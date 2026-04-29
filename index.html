@@ -21,7 +21,6 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
     .section { padding: 4rem 0; }
 
-    /* Barra informativa superior */
     .alert-bar {
       background: #0f172a;
       color: #e5e7eb;
@@ -42,7 +41,6 @@
       font-size: 0.8rem;
     }
 
-    /* Topbar */
     .topbar {
       position: sticky;
       top: 0;
@@ -103,7 +101,6 @@
     nav a:hover { color: #111827; }
     nav a:hover::after { width: 100%; }
 
-    /* Hero */
     .hero {
       position: relative;
       background: radial-gradient(circle at top left,#c20064 0,#1d4ed8 45%,#020617 100%);
@@ -271,7 +268,6 @@
       box-shadow: 0 0 12px rgba(34,197,94,0.9);
     }
 
-    /* Accesos rápidos */
     .quick-section {
       background: #0b1120;
       color: #e5e7eb;
@@ -407,6 +403,69 @@
     }
     .stat-label { font-size: 0.9rem; color: #4b5563; }
 
+    /* SECCIÓN MODIFICADA */
+    .tech-section {
+      position: relative;
+      overflow: hidden;
+      background: #f3f4f6;
+      isolation: isolate;
+    }
+    .tech-section-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .tech-section-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.08);
+      filter: saturate(0.95) contrast(1.02);
+    }
+    .tech-section-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(243,244,246,0.88) 0%, rgba(243,244,246,0.74) 42%, rgba(243,244,246,0.88) 100%);
+      backdrop-filter: blur(1px);
+    }
+    .tech-section .container {
+      position: relative;
+      z-index: 2;
+    }
+    .tech-stats-shell {
+      padding: 2.2rem;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 18px 55px rgba(15,23,42,0.10);
+    }
+    .tech-section .stat-card {
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem;
+      text-align: center;
+      box-shadow:
+        0 10px 30px rgba(15,23,42,0.08),
+        inset 0 0 0 1px rgba(255,255,255,0.42);
+      border: 1px solid rgba(255,255,255,0.42);
+    }
+    .tech-section .stat-number {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+    .tech-section .stat-label {
+      font-size: 0.95rem;
+      color: #475569;
+      font-weight: 500;
+    }
+
     .neighbors-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
@@ -471,7 +530,6 @@
     .contact-title { font-weight: 700; margin-bottom: 0.35rem; }
     .contact-text { font-size: 0.95rem; color: #4b5563; }
 
-    /* Redes sociales */
     .social-section {
       background: #020617;
       color: #e5e7eb;
@@ -535,6 +593,7 @@
       gap: 1rem;
       font-size: 0.9rem;
       flex-wrap: wrap;
+      align-items: center;
     }
     .footer-social-row a {
       color: #e5e7eb;
@@ -542,6 +601,24 @@
       text-decoration-color: rgba(249,115,22,0.7);
       text-decoration-thickness: 1px;
       text-underline-offset: 2px;
+    }
+
+    .instagram-box {
+      width: 120px;
+      display: inline-block;
+    }
+    .instagram-box a {
+      display: block;
+    }
+    .instagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .instagram-box:hover .instagram-img {
+      transform: scale(1.06);
+      opacity: .9;
     }
 
     @media (max-width: 900px) {
@@ -556,6 +633,9 @@
       .section { padding: 3rem 0; }
       .hero-emergency-number { font-size: 3rem; }
       .news-card, .feature-card, .neighbor-card, .contact-card { padding: 1.4rem 1.5rem; }
+      .tech-stats-shell { padding: 1.2rem; }
+      .tech-section .stat-card { padding: 1.4rem 1rem; }
+      .tech-section .stat-number { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -574,7 +654,7 @@
         <img src="quilicura_1.jpeg" alt="Logo Seguridad Pública Quilicura" class="brand-logo">
         <span>Seguridad Pública Quilicura</span>
       </a>
-    <nav aria-label="Navegación principal">
+      <nav aria-label="Navegación principal">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#noticias">Al día</a></li>
@@ -588,7 +668,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="container hero-inner">
         <div>
@@ -624,7 +703,6 @@
       </div>
     </section>
 
-    <!-- ACCESOS RÁPIDOS -->
     <section class="quick-section">
       <div class="container">
         <div class="quick-header">
@@ -659,7 +737,6 @@
       </div>
     </section>
 
-    <!-- NOTICIAS / AL DÍA -->
     <section id="noticias" class="section">
       <div class="container">
         <h2 class="section-title">Seguridad Quilicura al día</h2>
@@ -686,7 +763,6 @@
       </div>
     </section>
 
-    <!-- QUÉ ENCONTRARÁS AQUÍ -->
     <section id="queencontraras" class="section">
       <div class="container">
         <h2 class="section-title">Qué encontrarás aquí</h2>
@@ -734,33 +810,39 @@
       </div>
     </section>
 
-    <!-- TECNOLOGÍA / COBERTURA -->
-    <section id="estadisticas" class="section" style="background:#f3f4f6;">
+    <section id="estadisticas" class="section tech-section">
+      <div class="tech-section-bg">
+        <img src="file-1.jpg" alt="Vista aérea de cobertura territorial en Quilicura">
+      </div>
+      <div class="tech-section-overlay"></div>
+
       <div class="container">
         <h2 class="section-title">Tecnología y cobertura territorial</h2>
         <p class="section-subtitle">Infraestructura de televigilancia, drones y patrullaje preventivo al servicio de la comunidad.</p>
-        <div class="stats-grid">
-          <article class="stat-card">
-            <div class="stat-number">1.000+</div>
-            <p class="stat-label">Cámaras de vigilancia</p>
-          </article>
-          <article class="stat-card">
-            <div class="stat-number">5</div>
-            <p class="stat-label">Drones activos</p>
-          </article>
-          <article class="stat-card">
-            <div class="stat-number">21</div>
-            <p class="stat-label">Monopostes</p>
-          </article>
-          <article class="stat-card">
-            <div class="stat-number">5</div>
-            <p class="stat-label">Motocicletas</p>
-          </article>
+
+        <div class="tech-stats-shell">
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-number">1.000+</div>
+              <p class="stat-label">Cámaras de vigilancia</p>
+            </article>
+            <article class="stat-card">
+              <div class="stat-number">5</div>
+              <p class="stat-label">Drones activos</p>
+            </article>
+            <article class="stat-card">
+              <div class="stat-number">21</div>
+              <p class="stat-label">Monopostes</p>
+            </article>
+            <article class="stat-card">
+              <div class="stat-number">5</div>
+              <p class="stat-label">Motocicletas</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- VECINOS SEGUROS -->
     <section id="vecinos" class="section">
       <div class="container">
         <h2 class="section-title">Vecinos seguros</h2>
@@ -782,7 +864,6 @@
       </div>
     </section>
 
-    <!-- GALERÍA -->
     <section class="section" style="background:#0f172a; color:#e5e7eb;">
       <div class="container">
         <h2 class="section-title" style="color:#e5e7eb; background:none;">Galería institucional</h2>
@@ -797,7 +878,6 @@
       </div>
     </section>
 
-    <!-- VIDEO -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Video institucional</h2>
@@ -808,7 +888,6 @@
       </div>
     </section>
 
-    <!-- CONTACTO -->
     <section id="contacto" class="section" style="background:#f3f4f6;">
       <div class="container">
         <h2 class="section-title">Atención y contactos</h2>
@@ -840,7 +919,6 @@
       </div>
     </section>
 
-    <!-- REDES SOCIALES -->
     <section class="social-section">
       <div class="container social-inner">
         <div class="social-text">
@@ -848,7 +926,6 @@
           <p>Sigue los canales oficiales de la Municipalidad de Quilicura para conocer alertas, campañas y novedades en seguridad pública.</p>
         </div>
         <div class="social-links">
-          <!-- Reemplaza las URLs por las oficiales de la muni -->
           <a class="social-pill" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
             <span>📘</span><span>Facebook Municipalidad</span>
           </a>
@@ -856,7 +933,7 @@
             <span>📷</span><span>Instagram Seguridad</span>
           </a>
           <a class="social-pill" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-            <span>▶</span><span>YouTube Institucional</span>
+            <span>▶️</span><span>YouTube Institucional</span>
           </a>
           <a class="social-pill" href="https://x.com/" target="_blank" rel="noopener noreferrer">
             <span>✕</span><span>Cuenta en X / Twitter</span>
@@ -872,41 +949,18 @@
       <p style="font-size:0.85rem; color:#9ca3af; margin-top:0.4rem;">Sitio informativo para vecinas y vecinos. Ante una emergencia, usa los canales oficiales y la central 1485.</p>
 
       <div class="footer-social-row">
-        <!-- De nuevo, reemplaza por las URLs reales -->
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
         <span>·</span>
         <div class="instagram-box">
-  <a href="https://www.instagram.com/muniquilicura/?hl=es-la" target="_blank" rel="noopener noreferrer" title="Instagram">
-    <img src="https://www.ww2.muniquilicura.cl/wp-content/uploads/2021/09/Instagram-Icon.png" alt="Instagram" class="instagram-img">
-  </a>
-</div>
-
-<style>
-  .instagram-box {
-    width: 120px;
-    display: inline-block;
-  }
-
-  .instagram-box a {
-    display: block;
-  }
-
-  .instagram-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform .25s ease, opacity .25s ease;
-  }
-
-  .instagram-box:hover .instagram-img {
-    transform: scale(1.06);
-    opacity: .9;
-  }
-</style>
+          <a href="https://www.instagram.com/muniquilicura/?hl=es-la" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <img src="https://www.ww2.muniquilicura.cl/wp-content/uploads/2021/09/Instagram-Icon.png" alt="Instagram" class="instagram-img">
+          </a>
+        </div>
         <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
-   
+    </div>
   </footer>
 
 </body>
 </html>
+
